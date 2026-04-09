@@ -1,0 +1,217 @@
+import { useState } from "react";
+import { 
+  Building2, 
+  Users, 
+  CreditCard, 
+  TrendingUp, 
+  ShieldCheck, 
+  Globe,
+  Briefcase,
+  Layers,
+  Calculator,
+  ArrowRight
+} from "lucide-react";
+import { motion } from "motion/react";
+import { cn } from "../lib/utils";
+
+const REVENUE_STREAMS = [
+  {
+    title: "Diagnostic Interpretation (CDx)",
+    icon: <CreditCard className="w-6 h-6 text-indigo-600" />,
+    description: "Immediate revenue through a royalty-based model. We partner with CLIA-certified labs to provide the 'ImmunoSentry Report' as a value-add interpretation layer for standard HLA/Microbiome sequencing.",
+    details: "Royalty: €350 - €500 per patient report. Zero integration cost for labs."
+  },
+  {
+    title: "Trial Rescue & Audit Services",
+    icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />,
+    description: "High-value consulting for stalled or failing Phase II/III trials. We perform retrospective 'Rescue Audits' to identify high-risk sub-populations, potentially saving trials from regulatory rejection.",
+    details: "Project Fee: €150k - €300k per audit report. 4-week turnaround."
+  },
+  {
+    title: "Strategic R&D Licensing",
+    icon: <Building2 className="w-6 h-6 text-amber-600" />,
+    description: "Long-term enterprise licensing for pharmaceutical R&D data lakes. Integration of our mechanistic engine into internal discovery pipelines for early-stage molecule de-risking.",
+    details: "Annual License: €500k+ per drug development program."
+  }
+];
+
+const VALUE_PROPS = [
+  {
+    label: "Cost Reduction",
+    desc: "Early prediction of high-grade irAEs reduces emergency hospitalizations and ICU stays.",
+    icon: <TrendingUp className="w-5 h-5" />
+  },
+  {
+    label: "Patient Outcomes",
+    desc: "Optimized steroid management and drug selection based on individual biomarker profiles.",
+    icon: <Users className="w-5 h-5" />
+  },
+  {
+    label: "Data Intelligence",
+    desc: "Aggregated, anonymized data provides insights into real-world ICI toxicity patterns.",
+    icon: <Globe className="w-5 h-5" />
+  }
+];
+
+export function BusinessModel() {
+  const [cohortSize, setCohortSize] = useState(500);
+  const [iraeRate, setIraeRate] = useState(20);
+
+  const savings = (cohortSize * (iraeRate / 100) * 0.35 * 45000) / 1000000;
+
+  return (
+    <section id="business" className="py-24 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="max-w-2xl">
+            <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-3 flex items-center gap-2 font-display">
+              <Briefcase className="w-4 h-4" /> Strategic Framework
+            </h2>
+            <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight font-display">
+              Scaling <span className="text-indigo-600">Precision</span> Oncology.
+            </h3>
+            <p className="mt-4 text-lg text-gray-500">
+              ImmunoSentry is positioned at the intersection of diagnostic sequencing and clinical decision support, creating a sustainable ecosystem for immunotherapy safety.
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <div className="px-6 py-3 bg-white rounded-2xl border border-gray-200 shadow-sm">
+              <div className="text-2xl font-bold text-gray-900">$4.2B</div>
+              <div className="text-xs text-gray-400 uppercase font-bold">irAE Market TAM</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {REVENUE_STREAMS.map((stream, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group"
+            >
+              <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                {stream.icon}
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3 font-display">{stream.title}</h4>
+              <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                {stream.description}
+              </p>
+              <div className="p-4 bg-gray-50 rounded-xl text-xs text-gray-600 font-medium italic">
+                {stream.details}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="bg-white rounded-[2.5rem] p-12 border border-gray-100 shadow-sm mb-16">
+          <div className="flex flex-col lg:flex-row gap-12">
+            <div className="lg:w-1/3">
+              <h4 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-3 flex items-center gap-2 font-display">
+                <Calculator className="w-4 h-4" /> Trial ROI Calculator
+              </h4>
+              <h5 className="text-2xl font-bold text-gray-900 mb-4 font-display">Quantifying Economic Impact.</h5>
+              <p className="text-sm text-gray-500 leading-relaxed mb-6">
+                Estimate the potential savings in clinical trial costs by implementing ImmunoSentry's stratification layer to reduce irAE-related dropouts and protocol amendments.
+              </p>
+              <div className="p-4 bg-indigo-50 rounded-xl border border-indigo-100">
+                <div className="text-[10px] font-bold text-indigo-400 uppercase mb-1">Assumption</div>
+                <p className="text-[10px] text-indigo-700 italic">
+                  Average cost per patient dropout in Phase III ICI trials is estimated at €45,000 (including recruitment, monitoring, and data loss).
+                </p>
+              </div>
+            </div>
+
+            <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-xs font-bold text-gray-400 uppercase mb-2">Trial Cohort Size (n)</label>
+                  <input 
+                    type="range" 
+                    min="100" 
+                    max="2000" 
+                    step="100"
+                    value={cohortSize}
+                    onChange={(e) => setCohortSize(parseInt(e.target.value))}
+                    className="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+                  />
+                  <div className="flex justify-between mt-2 text-[10px] font-bold text-gray-400">
+                    <span>100</span>
+                    <span className="text-indigo-600">{cohortSize}</span>
+                    <span>2000</span>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-gray-400 uppercase mb-2">Projected irAE Rate (%)</label>
+                  <input 
+                    type="range" 
+                    min="5" 
+                    max="40" 
+                    step="5"
+                    value={iraeRate}
+                    onChange={(e) => setIraeRate(parseInt(e.target.value))}
+                    className="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+                  />
+                  <div className="flex justify-between mt-2 text-[10px] font-bold text-gray-400">
+                    <span>5%</span>
+                    <span className="text-indigo-600">{iraeRate}%</span>
+                    <span>40%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-900 rounded-3xl p-8 text-white flex flex-col justify-between relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-10">
+                  <TrendingUp className="w-24 h-24" />
+                </div>
+                <div className="relative z-10">
+                  <div className="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-2">Projected Trial Savings</div>
+                  <div className="text-5xl font-black text-white mb-2">€{savings.toFixed(2)}M</div>
+                  <p className="text-xs text-gray-400">Based on 35% reduction in high-grade irAE dropouts.</p>
+                </div>
+                <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between relative z-10">
+                  <div className="text-[10px] font-bold text-indigo-300 uppercase">ROI Ratio: {(savings / 0.25).toFixed(1)}x</div>
+                  <div className="text-[10px] font-bold text-emerald-400 flex items-center gap-1">
+                    <ShieldCheck className="w-3 h-3" /> Validated Model
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-indigo-900 rounded-[2.5rem] p-12 text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+            {VALUE_PROPS.map((prop, i) => (
+              <div key={i} className="space-y-4">
+                <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-white">
+                  {prop.icon}
+                </div>
+                <h5 className="text-lg font-bold font-display">{prop.label}</h5>
+                <p className="text-indigo-200 text-sm leading-relaxed">
+                  {prop.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="flex items-center gap-3">
+              <img src="/logo.svg" alt="ImmunoSentry Logo" className="w-8 h-8 brightness-0 invert" referrerPolicy="no-referrer" />
+              <span className="text-xl font-bold">Immuno<span className="text-indigo-400">Sentry</span> Enterprise</span>
+            </div>
+            <div className="flex gap-6 text-sm font-medium text-indigo-200">
+              <span>GDPR Compliant</span>
+              <span>HIPAA Ready</span>
+              <span>ISO 27001</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

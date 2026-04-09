@@ -1,0 +1,27 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGradient" x1="180" y1="120" x2="320" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="100%" stop-color="#0D9488" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield Background -->
+  <path d="M250 420C250 420 400 350 400 200V120L250 80L100 120V200C100 350 250 420 250 420Z" fill="url(#shieldGradient)" />
+  
+  <!-- Antibody (Y-Shape) -->
+  <path d="M250 280V360M250 280L180 180M250 280L320 180" stroke="white" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M180 180L150 140M320 180L350 140" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+
+  <!-- Molecular Structure -->
+  <circle cx="380" cy="120" r="15" fill="#2DD4BF" />
+  <circle cx="420" cy="150" r="20" fill="#2DD4BF" />
+  <circle cx="440" cy="100" r="10" fill="#2DD4BF" />
+  <line x1="380" y1="120" x2="420" y2="150" stroke="#2DD4BF" stroke-width="4" />
+  <line x1="420" y1="150" x2="440" y2="100" stroke="#2DD4BF" stroke-width="4" />
+  
+  <!-- Decorative Elements -->
+  <path d="M120 350L130 350M125 345L125 355" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" />
+  <path d="M380 280L390 280M385 275L385 285" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" />
+  <circle cx="110" cy="180" r="4" fill="#2DD4BF" />
+</svg>
