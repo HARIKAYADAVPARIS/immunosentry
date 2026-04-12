@@ -340,7 +340,7 @@ export function Home() {
           
           <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-gray-400">
-              © 2026 ImmunoSentry SAS. Based on Nature Communications (2022) 13:392.
+              © 2026 ImmunoSentry SAS. Based on ESMO 2025 & Nature Communications (2022) 13:392.
             </p>
             <div className="flex gap-6">
               <Link to="/legal" className="text-xs text-gray-400 hover:text-indigo-600 transition-colors">Privacy</Link>

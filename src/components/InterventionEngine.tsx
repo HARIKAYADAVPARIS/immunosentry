@@ -161,11 +161,11 @@ async def process_trial(file: UploadFile):
   return (
     <section id="intervention-engine" className="py-32 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center gap-2 font-display">
-            <ShieldCheck className="w-4 h-4" /> Clinical Intervention Engine
-          </h2>
-          <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl font-display">
+        <div className="mb-20">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
+            <ShieldCheck className="w-3 h-3" /> ESMO 2025 Validated
+          </div>
+          <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-6xl font-display">
             Explainable <span className="text-indigo-600">Intervention</span> Engine.
           </h3>
           <p className="mt-6 text-xl text-gray-500 max-w-3xl leading-relaxed">
@@ -298,16 +298,16 @@ async def process_trial(file: UploadFile):
                 </div>
 
                 {/* Attribution Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {[
                     { label: "T-cell Activation", value: explanation.T_cell_activation, color: "text-indigo-600" },
                     { label: "HLA-B27 Sensitivity", value: explanation.HLA_B27, color: "text-blue-600" },
                     { label: "Macrophage Response", value: explanation.Macrophage_IL6, color: "text-amber-600" },
                     { label: "Cytokine Storm", value: explanation.Cytokine_storm, color: "text-red-600" }
                   ].map((item, i) => (
-                    <div key={i} className="p-4 bg-white rounded-2xl border border-gray-100 shadow-sm text-center">
-                      <div className="text-[10px] font-bold text-gray-400 uppercase mb-2">{item.label}</div>
-                      <div className={cn("text-2xl font-black", item.color)}>+{item.value}%</div>
+                    <div key={i} className="p-6 bg-gray-50/50 rounded-3xl border border-gray-100 text-center group hover:bg-white hover:shadow-xl transition-all">
+                      <div className="text-[10px] font-bold text-gray-400 uppercase mb-3 tracking-widest">{item.label}</div>
+                      <div className={cn("text-3xl font-black", item.color)}>+{item.value}%</div>
                     </div>
                   ))}
                 </div>

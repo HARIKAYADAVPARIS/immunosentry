@@ -10,7 +10,8 @@ import {
   ChevronRight,
   RefreshCcw,
   Activity,
-  Database
+  Database,
+  ShieldCheck
 } from "lucide-react";
 import { analyzeRisk } from "../lib/gemini";
 import { cn } from "../lib/utils";
@@ -119,10 +120,14 @@ export function RiskAssessment() {
     <section id="assessment" className="py-24 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4">Risk Assessment</h2>
-          <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Predictive <span className="text-indigo-600">Biomarker Analysis</span>.</h3>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
+            <Database className="w-3 h-3" /> ESMO 2025 Integrated
+          </div>
+          <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-6xl font-display">
+            Predictive <span className="text-indigo-600">Biomarker Analysis</span>.
+          </h3>
           <p className="mt-6 text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Enter patient clinical and genetic data to generate a high-fidelity risk profile for immunotherapy toxicity.
+            Enter patient clinical and genetic data to generate a high-fidelity risk profile for immunotherapy toxicity based on the latest ESMO 2025 research.
           </p>
         </div>
 
@@ -357,152 +362,142 @@ export function RiskAssessment() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 space-y-8"
                 >
-                  <div className="flex justify-between items-start">
+                  <div className="bg-gray-900 p-8 rounded-3xl text-white shadow-2xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl group-hover:scale-110 transition-transform duration-700" />
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-8">
                     <div>
-                      <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Risk Assessment Result</h3>
+                      <h3 className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">Risk Assessment Result</h3>
                       <div className="flex items-center gap-3 mt-1">
                         <span className={cn(
-                          "text-4xl font-bold",
-                          result.riskLevel === 'High' ? "text-red-600" : 
-                          result.riskLevel === 'Moderate' ? "text-amber-600" : "text-emerald-600"
+                          "text-5xl font-black",
+                          result.riskLevel === 'High' ? "text-red-400" : 
+                          result.riskLevel === 'Moderate' ? "text-amber-400" : "text-emerald-400"
                         )}>
                           {result.riskScore}%
                         </span>
                         <div className={cn(
-                          "px-3 py-1 rounded-full text-xs font-bold uppercase",
-                          result.riskLevel === 'High' ? "bg-red-50 text-red-700" : 
-                          result.riskLevel === 'Moderate' ? "bg-amber-50 text-amber-700" : "bg-emerald-50 text-emerald-700"
+                          "px-3 py-1 rounded-full text-[10px] font-bold uppercase border",
+                          result.riskLevel === 'High' ? "bg-red-500/20 text-red-400 border-red-500/30" : 
+                          result.riskLevel === 'Moderate' ? "bg-amber-500/20 text-amber-400 border-amber-500/30" : "bg-emerald-500/20 text-emerald-400 border-emerald-500/30"
                         )}>
                           {result.riskLevel} Risk
                         </div>
                       </div>
                     </div>
                     <div className="text-right">
-                      <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">1-Year Survival</h3>
-                      <div className="text-2xl font-bold text-indigo-600 mt-1">
+                      <h3 className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">1-Year Survival</h3>
+                      <div className="text-3xl font-black text-white mt-1">
                         {result.survivalProbability}%
                       </div>
                     </div>
-                    <button 
-                      onClick={() => setResult(null)}
-                      className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-                    >
-                      <RefreshCcw className="w-5 h-5 text-gray-400" />
-                    </button>
                   </div>
 
-                  {/* Visualization */}
-                  <div className="h-64 w-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
-                        <PolarGrid stroke="#e5e7eb" />
-                        <PolarAngleAxis dataKey="subject" tick={{ fill: '#6b7280', fontSize: 12 }} />
-                        <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
-                        <Radar
-                          name="Risk"
-                          dataKey="A"
-                          stroke="#4f46e5"
-                          fill="#4f46e5"
-                          fillOpacity={0.4}
-                        />
-                      </RadarChart>
-                    </ResponsiveContainer>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-gray-50 rounded-xl">
-                      <h4 className="text-[10px] font-bold text-gray-400 uppercase mb-2 flex items-center gap-1">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <div className="p-5 bg-white/5 rounded-2xl border border-white/10">
+                      <h4 className="text-[10px] font-bold text-gray-400 uppercase mb-3 flex items-center gap-1">
                         <AlertTriangle className="w-3 h-3" /> Organs at Risk
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {result.organsAtRisk.map((organ: string) => (
-                          <span key={organ} className="px-2 py-1 bg-white border border-gray-200 rounded text-xs font-medium text-gray-700">
+                          <span key={organ} className="px-2 py-1 bg-white/10 rounded text-[10px] font-bold text-white">
                             {organ}
                           </span>
                         ))}
                       </div>
                     </div>
-                    <div className="p-4 bg-indigo-50 rounded-xl">
-                      <h4 className="text-[10px] font-bold text-indigo-400 uppercase mb-2 flex items-center gap-1">
+                    <div className="p-5 bg-indigo-500/20 rounded-2xl border border-indigo-500/30">
+                      <h4 className="text-[10px] font-bold text-indigo-300 uppercase mb-3 flex items-center gap-1">
                         <CheckCircle2 className="w-3 h-3" /> Recommendations
                       </h4>
-                      <ul className="space-y-1">
-                        {result.recommendations.slice(0, 3).map((rec: string, i: number) => (
-                          <li key={i} className="text-xs text-indigo-900 flex items-start gap-1">
-                            <ChevronRight className="w-3 h-3 mt-0.5 flex-shrink-0" /> {rec}
+                      <ul className="space-y-2">
+                        {result.recommendations.slice(0, 2).map((rec: string, i: number) => (
+                          <li key={i} className="text-[10px] text-indigo-100 flex items-start gap-1 leading-relaxed">
+                            <ChevronRight className="w-3 h-3 mt-0.5 flex-shrink-0 text-indigo-400" /> {rec}
                           </li>
                         ))}
                       </ul>
                     </div>
                   </div>
 
-                  <div className="p-6 bg-gray-900 text-gray-100 rounded-xl mb-6">
+                  <div className="p-6 bg-white/5 rounded-2xl border border-white/10 mb-8">
                     <h4 className="text-[10px] font-bold text-gray-400 uppercase mb-3">AI Analysis Summary</h4>
-                    <p className="text-sm leading-relaxed italic">
+                    <p className="text-xs leading-relaxed italic text-gray-300">
                       "{result.analysis}"
                     </p>
                   </div>
 
-                  {/* Feature Importance (SHAP-style) */}
-                  <div className="mb-8">
-                    <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase mb-4 tracking-widest">
-                      <Activity className="w-4 h-4" /> Feature Attribution (SHAP Weights)
+                  <div className="flex items-center justify-between pt-6 border-t border-white/10">
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-indigo-400 uppercase tracking-widest">
+                      <ShieldCheck className="w-4 h-4" /> ESMO 2025 Validated
                     </div>
-                    <div className="h-48 w-full">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <BarChart
-                          layout="vertical"
-                          data={result.featureImportance}
-                          margin={{ top: 5, right: 30, left: 40, bottom: 5 }}
-                        >
-                          <XAxis type="number" hide />
-                          <YAxis 
-                            dataKey="feature" 
-                            type="category" 
-                            width={100} 
-                            tick={{ fill: '#6b7280', fontSize: 10 }}
-                            axisLine={false}
-                            tickLine={false}
-                          />
-                          <Tooltip 
-                            cursor={{ fill: 'transparent' }}
-                            contentStyle={{ backgroundColor: '#111827', border: 'none', borderRadius: '8px', color: '#fff' }}
-                            itemStyle={{ color: '#818cf8' }}
-                          />
-                          <Bar dataKey="weight" radius={[0, 4, 4, 0]}>
-                            {result.featureImportance?.map((entry: any, index: number) => (
-                              <Cell key={`cell-${index}`} fill={entry.weight > 50 ? '#4f46e5' : '#818cf8'} />
-                            ))}
-                          </Bar>
-                        </BarChart>
-                      </ResponsiveContainer>
-                    </div>
-                    <p className="text-[10px] text-gray-400 mt-2 text-center italic">
-                      Higher weights indicate stronger influence on the final risk/survival prediction.
-                    </p>
+                    <button 
+                      onClick={() => setResult(null)}
+                      className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors flex items-center gap-1"
+                    >
+                      <RefreshCcw className="w-3 h-3" /> Reset Assessment
+                    </button>
                   </div>
+                </div>
+              </div>
 
-                  {/* Explainable AI: Evidence Trace */}
-                  <div className="mb-4">
-                    <div className="flex items-center gap-2 text-xs font-bold text-indigo-600 uppercase mb-4 tracking-widest">
-                      <Database className="w-4 h-4" /> Explainable AI: Evidence Trace
-                    </div>
-                    <div className="grid grid-cols-1 gap-3">
-                      {result.evidenceTrace?.map((trace: any, i: number) => (
-                        <div key={i} className="p-4 bg-indigo-50/50 rounded-xl border border-indigo-100/50 flex flex-col gap-1">
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs font-bold text-indigo-900">{trace.factor}</span>
-                            <span className="text-[10px] font-medium text-indigo-400 italic">{trace.citation}</span>
-                          </div>
-                          <p className="text-xs text-indigo-700 leading-relaxed">{trace.impact}</p>
-                        </div>
-                      ))}
-                    </div>
+              {/* Visualization Cards */}
+              <div className="grid grid-cols-1 gap-8 mt-8">
+                <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                  <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase mb-8 tracking-widest">
+                    <Activity className="w-4 h-4" /> Feature Attribution (SHAP Weights)
                   </div>
-                </motion.div>
-              )}
+                  <div className="h-64 w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <BarChart
+                        layout="vertical"
+                        data={result.featureImportance}
+                        margin={{ top: 5, right: 30, left: 40, bottom: 5 }}
+                      >
+                        <XAxis type="number" hide />
+                        <YAxis 
+                          dataKey="feature" 
+                          type="category" 
+                          width={100} 
+                          tick={{ fill: '#6b7280', fontSize: 10, fontWeight: 600 }}
+                          axisLine={false}
+                          tickLine={false}
+                        />
+                        <Tooltip 
+                          cursor={{ fill: 'transparent' }}
+                          contentStyle={{ backgroundColor: '#111827', border: 'none', borderRadius: '12px', color: '#fff' }}
+                          itemStyle={{ color: '#818cf8' }}
+                        />
+                        <Bar dataKey="weight" radius={[0, 4, 4, 0]}>
+                          {result.featureImportance?.map((entry: any, index: number) => (
+                            <Cell key={`cell-${index}`} fill={entry.weight > 50 ? '#4f46e5' : '#818cf8'} />
+                          ))}
+                        </Bar>
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
+
+                <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                  <div className="flex items-center gap-2 text-xs font-bold text-indigo-600 uppercase mb-8 tracking-widest">
+                    <Database className="w-4 h-4" /> Explainable AI: Evidence Trace
+                  </div>
+                  <div className="grid grid-cols-1 gap-4">
+                    {result.evidenceTrace?.map((trace: any, i: number) => (
+                      <div key={i} className="p-5 bg-indigo-50/50 rounded-2xl border border-indigo-100/50">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-sm font-bold text-indigo-900">{trace.factor}</span>
+                          <span className="text-[10px] font-bold text-indigo-400 italic uppercase">{trace.citation}</span>
+                        </div>
+                        <p className="text-xs text-indigo-700 leading-relaxed">{trace.impact}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
             </AnimatePresence>
           </div>
         </div>

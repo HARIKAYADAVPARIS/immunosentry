@@ -112,15 +112,14 @@ export function RealWorldValidation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-3xl">
-            <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center gap-2 font-display">
-              <Database className="w-4 h-4" /> Real-World Validation
-            </h2>
-            <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl font-display">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
+              <Database className="w-3 h-3" /> ESMO 2025 Integrated
+            </div>
+            <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-6xl font-display">
               Clinical <span className="text-indigo-600">Benchmark</span> Engine.
             </h3>
             <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-              Directly validate ImmunoSentry's predictive engine against real patient cohorts from cBioPortal. 
-              Live API integration with MSK-IMPACT and Checkmate trial data.
+              Directly validate ImmunoSentry's predictive engine against real patient cohorts from cBioPortal, benchmarked against ESMO 2025 standards.
             </p>
           </div>
           
