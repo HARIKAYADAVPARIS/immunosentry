@@ -159,22 +159,22 @@ async def process_trial(file: UploadFile):
     }`;
 
   return (
-    <section id="intervention-engine" className="py-24 bg-white border-t border-gray-100">
+    <section id="intervention-engine" className="py-32 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-3 flex items-center gap-2 font-display">
+        <div className="mb-16">
+          <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center gap-2 font-display">
             <ShieldCheck className="w-4 h-4" /> Clinical Intervention Engine
           </h2>
-          <h3 className="text-3xl font-extrabold text-gray-900 tracking-tight font-display">
+          <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl font-display">
             Explainable <span className="text-indigo-600">Intervention</span> Engine.
           </h3>
-          <p className="mt-4 text-lg text-gray-500 max-w-3xl">
+          <p className="mt-6 text-xl text-gray-500 max-w-3xl leading-relaxed">
             Deterministic biological simulation for irAE management. No machine learning. 
             Pure mechanistic explainability based on ESMO 2025 validated thresholds.
           </p>
         </div>
 
-        <div className="flex gap-4 mb-8">
+        <div className="flex flex-wrap gap-4 mb-12">
           {[
             { id: "patient", label: "Patient #123 Simulation", icon: <Activity className="w-4 h-4" /> },
             { id: "cohort", label: "Cohort Impact (n=500)", icon: <Users className="w-4 h-4" /> },
@@ -184,7 +184,7 @@ async def process_trial(file: UploadFile):
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
               className={cn(
-                "px-6 py-3 rounded-2xl text-sm font-bold transition-all flex items-center gap-2",
+                "px-8 py-4 rounded-2xl text-sm font-bold transition-all flex items-center gap-2",
                 activeTab === tab.id 
                   ? "bg-indigo-600 text-white shadow-xl shadow-indigo-100" 
                   : "bg-gray-50 text-gray-500 hover:bg-gray-100"

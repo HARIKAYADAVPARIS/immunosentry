@@ -60,17 +60,17 @@ export function BusinessModel() {
   const savings = (cohortSize * (iraeRate / 100) * 0.35 * 45000) / 1000000;
 
   return (
-    <section id="business" className="py-24 bg-gray-50">
+    <section id="business" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="max-w-2xl">
-            <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-3 flex items-center gap-2 font-display">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="max-w-3xl">
+            <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center gap-2 font-display">
               <Briefcase className="w-4 h-4" /> Strategic Framework
             </h2>
-            <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight font-display">
+            <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl font-display">
               Scaling <span className="text-indigo-600">Precision</span> Oncology.
             </h3>
-            <p className="mt-4 text-lg text-gray-500">
+            <p className="mt-6 text-xl text-gray-500 leading-relaxed">
               ImmunoSentry is positioned at the intersection of diagnostic sequencing and clinical decision support, creating a sustainable ecosystem for immunotherapy safety.
             </p>
           </div>
@@ -82,7 +82,7 @@ export function BusinessModel() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
           {REVENUE_STREAMS.map((stream, i) => (
             <motion.div
               key={i}
@@ -90,16 +90,16 @@ export function BusinessModel() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group"
+              className="bg-gray-50/50 p-10 rounded-3xl border border-gray-100 hover:shadow-xl transition-all group"
             >
-              <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform shadow-sm">
                 {stream.icon}
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-3 font-display">{stream.title}</h4>
-              <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+              <h4 className="text-2xl font-bold text-gray-900 mb-4 font-display">{stream.title}</h4>
+              <p className="text-gray-500 text-sm mb-8 leading-relaxed">
                 {stream.description}
               </p>
-              <div className="p-4 bg-gray-50 rounded-xl text-xs text-gray-600 font-medium italic">
+              <div className="p-5 bg-white rounded-2xl text-xs text-gray-600 font-medium italic border border-gray-100">
                 {stream.details}
               </div>
             </motion.div>
@@ -109,10 +109,10 @@ export function BusinessModel() {
         <div className="bg-white rounded-[2.5rem] p-12 border border-gray-100 shadow-sm mb-16">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/3">
-              <h4 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-3 flex items-center gap-2 font-display">
+              <h4 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-3 flex items-center gap-2">
                 <Calculator className="w-4 h-4" /> Trial ROI Calculator
               </h4>
-              <h5 className="text-2xl font-bold text-gray-900 mb-4 font-display">Quantifying Economic Impact.</h5>
+              <h5 className="text-2xl font-bold text-gray-900 mb-4">Quantifying Economic Impact.</h5>
               <p className="text-sm text-gray-500 leading-relaxed mb-6">
                 Estimate the potential savings in clinical trial costs by implementing ImmunoSentry's stratification layer to reduce irAE-related dropouts and protocol amendments.
               </p>
@@ -191,7 +191,7 @@ export function BusinessModel() {
                 <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-white">
                   {prop.icon}
                 </div>
-                <h5 className="text-lg font-bold font-display">{prop.label}</h5>
+                <h5 className="text-lg font-bold">{prop.label}</h5>
                 <p className="text-indigo-200 text-sm leading-relaxed">
                   {prop.desc}
                 </p>

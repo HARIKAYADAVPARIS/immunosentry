@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 export function Header() {
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <img src="/logo.svg" alt="ImmunoSentry Logo" className="w-10 h-10" referrerPolicy="no-referrer" />
-            <span className="text-xl font-bold text-gray-900 tracking-wide font-display">
+            <span className="text-xl font-bold text-gray-900 tracking-wide">
               Immuno<span className="text-indigo-600">Sentry</span>
             </span>
           </Link>
@@ -25,9 +25,9 @@ export function Header() {
             <a href="#validation" className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1">
               <Database className="w-4 h-4" /> Validation
             </a>
-            <a href="#knowledge" className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1">
+            <Link to="/knowledge" className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1">
               <Info className="w-4 h-4" /> Knowledge Base
-            </a>
+            </Link>
             <a href="#business" className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1">
               <Briefcase className="w-4 h-4" /> Business Model
             </a>

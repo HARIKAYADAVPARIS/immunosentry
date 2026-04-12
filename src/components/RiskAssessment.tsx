@@ -116,22 +116,30 @@ export function RiskAssessment() {
   ] : [];
 
   return (
-    <section id="assessment" className="py-12 bg-gray-50 min-h-screen">
+    <section id="assessment" className="py-24 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="text-center mb-20">
+          <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4">Risk Assessment</h2>
+          <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Predictive <span className="text-indigo-600">Biomarker Analysis</span>.</h3>
+          <p className="mt-6 text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            Enter patient clinical and genetic data to generate a high-fidelity risk profile for immunotherapy toxicity.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Form Side */}
           <div className="space-y-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-              <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2 font-display">
-                <Microscope className="text-indigo-600" /> Patient Biomarker Input
+            <div className="bg-gray-50/50 p-10 rounded-3xl border border-gray-100">
+              <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3 font-display">
+                <Microscope className="w-6 h-6 text-indigo-600" /> Patient Profile
               </h2>
               
               <div className="space-y-6">
                 {/* Drug Selection */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Immunotherapy Drug</label>
+                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Immunotherapy Drug</label>
                   <select 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                    className="w-full bg-white border border-gray-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all appearance-none cursor-pointer font-medium"
                     value={formData.drug}
                     onChange={(e) => setFormData({ ...formData, drug: e.target.value })}
                   >
@@ -141,9 +149,9 @@ export function RiskAssessment() {
 
                 {/* Cancer Type */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Cancer Type</label>
+                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Cancer Type</label>
                   <select 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                    className="w-full bg-white border border-gray-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all appearance-none cursor-pointer font-medium"
                     value={formData.cancerType}
                     onChange={(e) => setFormData({ ...formData, cancerType: e.target.value })}
                   >
@@ -152,20 +160,20 @@ export function RiskAssessment() {
                 </div>
 
                 {/* New Clinical Inputs */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Age</label>
+                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Age</label>
                     <input 
                       type="number"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                      className="w-full bg-white border border-gray-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all font-medium"
                       value={formData.age}
                       onChange={(e) => setFormData({ ...formData, age: parseInt(e.target.value) })}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Gender</label>
+                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Gender</label>
                     <select 
-                      className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                      className="w-full bg-white border border-gray-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all appearance-none cursor-pointer font-medium"
                       value={formData.gender}
                       onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
                     >
@@ -175,11 +183,11 @@ export function RiskAssessment() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Tumor Grade</label>
+                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Tumor Grade</label>
                     <select 
-                      className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                      className="w-full bg-white border border-gray-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all appearance-none cursor-pointer font-medium"
                       value={formData.tumorGrade}
                       onChange={(e) => setFormData({ ...formData, tumorGrade: e.target.value })}
                     >
@@ -190,10 +198,10 @@ export function RiskAssessment() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Charlson Score</label>
+                    <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Charlson Score</label>
                     <input 
                       type="number"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                      className="w-full bg-white border border-gray-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all font-medium"
                       value={formData.charlsonScore}
                       onChange={(e) => setFormData({ ...formData, charlsonScore: parseInt(e.target.value) })}
                     />
@@ -213,18 +221,18 @@ export function RiskAssessment() {
 
                 {/* HLA Alleles */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-1">
+                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
                     <Dna className="w-4 h-4" /> Genetic Markers (HLA Alleles)
                   </label>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {HLA_OPTIONS.map(hla => (
                       <button
                         key={hla}
                         onClick={() => handleToggleHLA(hla)}
                         className={cn(
-                          "px-3 py-1.5 rounded-full text-xs font-medium transition-all border",
+                          "px-5 py-2.5 rounded-2xl text-xs font-bold transition-all border",
                           formData.hlaAlleles.includes(hla)
-                            ? "bg-indigo-600 text-white border-indigo-600"
+                            ? "bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-indigo-100"
                             : "bg-white text-gray-600 border-gray-200 hover:border-indigo-300"
                         )}
                       >
@@ -235,19 +243,19 @@ export function RiskAssessment() {
                 </div>
 
                 {/* Microbiome Sliders */}
-                <div className="space-y-4">
-                  <label className="block text-sm font-medium text-gray-700 flex items-center gap-1">
+                <div className="space-y-6">
+                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 flex items-center gap-2">
                     <Activity className="w-4 h-4" /> Microbiome Relative Abundance
                   </label>
                   
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-xs text-gray-500">
+                  <div className="space-y-3">
+                    <div className="flex justify-between text-xs font-bold text-gray-500">
                       <span>Faecalibacterium prausnitzii</span>
-                      <span className="font-mono">{formData.microbiome.faecalibacterium}%</span>
+                      <span className="font-mono text-indigo-600">{formData.microbiome.faecalibacterium}%</span>
                     </div>
                     <input 
                       type="range" 
-                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+                      className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                       value={formData.microbiome.faecalibacterium}
                       onChange={(e) => setFormData({ 
                         ...formData, 
@@ -256,14 +264,14 @@ export function RiskAssessment() {
                     />
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-xs text-gray-500">
+                  <div className="space-y-3">
+                    <div className="flex justify-between text-xs font-bold text-gray-500">
                       <span>Bifidobacterium</span>
-                      <span className="font-mono">{formData.microbiome.bifidobacterium}%</span>
+                      <span className="font-mono text-indigo-600">{formData.microbiome.bifidobacterium}%</span>
                     </div>
                     <input 
                       type="range" 
-                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+                      className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                       value={formData.microbiome.bifidobacterium}
                       onChange={(e) => setFormData({ 
                         ...formData, 
@@ -276,7 +284,7 @@ export function RiskAssessment() {
                 <button
                   onClick={handleAnalyze}
                   disabled={loading}
-                  className="w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full bg-indigo-600 text-white py-5 rounded-2xl font-bold hover:bg-indigo-700 transition-all flex items-center justify-center gap-3 disabled:opacity-50 shadow-xl shadow-indigo-100 active:scale-[0.98]"
                 >
                   {loading ? (
                     <>
@@ -302,7 +310,7 @@ export function RiskAssessment() {
                   className="h-full flex flex-col items-center justify-center text-center p-12 bg-red-50 rounded-2xl border border-red-100 shadow-sm"
                 >
                   <AlertTriangle className="w-12 h-12 text-red-600 mb-6" />
-                  <h3 className="text-lg font-medium text-red-900 font-display">Analysis Failed</h3>
+                  <h3 className="text-base font-medium text-red-900">Analysis Failed</h3>
                   <p className="text-sm text-red-700 mt-2 max-w-xs">
                     {error}
                   </p>
@@ -324,7 +332,7 @@ export function RiskAssessment() {
                   <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4">
                     <Activity className="w-8 h-8 text-gray-300" />
                   </div>
-                  <h3 className="text-lg font-medium text-gray-900 font-display">Ready for Analysis</h3>
+                  <h3 className="text-base font-medium text-gray-900">Ready for Analysis</h3>
                   <p className="text-sm text-gray-500 mt-2 max-w-xs">
                     Enter the patient's genetic and microbial data to generate a predictive risk report for irAEs.
                   </p>
@@ -338,7 +346,7 @@ export function RiskAssessment() {
                   className="h-full flex flex-col items-center justify-center text-center p-12 bg-white rounded-2xl border border-gray-100 shadow-sm"
                 >
                   <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mb-6" />
-                  <h3 className="text-lg font-medium text-gray-900 font-display">AI Predictive Engine Running</h3>
+                  <h3 className="text-base font-medium text-gray-900">AI Predictive Engine Running</h3>
                   <p className="text-sm text-gray-500 mt-2 max-w-xs">
                     Correlating HLA alleles and gut microbial abundance with clinical trial data...
                   </p>
@@ -353,7 +361,7 @@ export function RiskAssessment() {
                 >
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider font-display">Risk Assessment Result</h3>
+                      <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Risk Assessment Result</h3>
                       <div className="flex items-center gap-3 mt-1">
                         <span className={cn(
                           "text-4xl font-bold",
@@ -372,7 +380,7 @@ export function RiskAssessment() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider font-display">1-Year Survival</h3>
+                      <h3 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">1-Year Survival</h3>
                       <div className="text-2xl font-bold text-indigo-600 mt-1">
                         {result.survivalProbability}%
                       </div>
@@ -405,7 +413,7 @@ export function RiskAssessment() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="p-4 bg-gray-50 rounded-xl">
-                      <h4 className="text-xs font-bold text-gray-400 uppercase mb-2 flex items-center gap-1 font-display">
+                      <h4 className="text-[10px] font-bold text-gray-400 uppercase mb-2 flex items-center gap-1">
                         <AlertTriangle className="w-3 h-3" /> Organs at Risk
                       </h4>
                       <div className="flex flex-wrap gap-2">
@@ -417,7 +425,7 @@ export function RiskAssessment() {
                       </div>
                     </div>
                     <div className="p-4 bg-indigo-50 rounded-xl">
-                      <h4 className="text-xs font-bold text-indigo-400 uppercase mb-2 flex items-center gap-1 font-display">
+                      <h4 className="text-[10px] font-bold text-indigo-400 uppercase mb-2 flex items-center gap-1">
                         <CheckCircle2 className="w-3 h-3" /> Recommendations
                       </h4>
                       <ul className="space-y-1">
@@ -431,7 +439,7 @@ export function RiskAssessment() {
                   </div>
 
                   <div className="p-6 bg-gray-900 text-gray-100 rounded-xl mb-6">
-                    <h4 className="text-xs font-bold text-gray-400 uppercase mb-3 font-display">AI Analysis Summary</h4>
+                    <h4 className="text-[10px] font-bold text-gray-400 uppercase mb-3">AI Analysis Summary</h4>
                     <p className="text-sm leading-relaxed italic">
                       "{result.analysis}"
                     </p>

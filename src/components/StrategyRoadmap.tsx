@@ -15,7 +15,8 @@ import {
   Cpu,
   Linkedin,
   Twitter,
-  Github
+  Github,
+  Instagram
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -23,9 +24,9 @@ export function StrategyRoadmap() {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
               <img src="/logo.svg" alt="ImmunoSentry Logo" className="w-10 h-10" referrerPolicy="no-referrer" />
               <span className="text-xl font-bold text-gray-900 tracking-wide font-display">
@@ -34,7 +35,7 @@ export function StrategyRoadmap() {
             </div>
             <Link 
               to="/" 
-              className="text-sm font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-2 px-4 py-2 bg-indigo-50 rounded-xl transition-all"
+              className="text-sm font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-2 px-6 py-3 bg-indigo-50 rounded-2xl transition-all"
             >
               <ArrowLeft className="w-4 h-4" /> Back to Platform
             </Link>
@@ -53,7 +54,7 @@ export function StrategyRoadmap() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
               <ShieldCheck className="w-3 h-3" /> Founder's Strategic Vision
             </div>
-            <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight sm:text-6xl mb-6 font-display">
+            <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight sm:text-6xl mb-6">
               The Path to <span className="text-indigo-600">Dominance</span>.
             </h1>
             <p className="text-xl text-gray-500 leading-relaxed">
@@ -77,7 +78,7 @@ export function StrategyRoadmap() {
               <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                 <Cpu className="w-6 h-6 text-indigo-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Federated Learning Architecture</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Federated Learning Architecture</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Pharma companies are protective of their data. Our "Privacy-First" Federated Learning allows us to train models on private clinical trial data without the data ever leaving their servers.
               </p>
@@ -95,7 +96,7 @@ export function StrategyRoadmap() {
               <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
                 <Database className="w-6 h-6 text-indigo-300" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 font-display">The "Data Flywheel"</h3>
+              <h3 className="text-2xl font-bold mb-4">The "Data Flywheel"</h3>
               <p className="text-indigo-200 leading-relaxed mb-6">
                 As we partner with diagnostic labs (CDx model), we aggregate anonymized real-world data (RWD) that pharma companies lack. This creates a self-reinforcing loop: more data → better models → more partners.
               </p>
@@ -196,7 +197,7 @@ export function StrategyRoadmap() {
 
         {/* Final CTA */}
         <section className="text-center py-20 bg-indigo-600 rounded-[3rem] text-white">
-          <h2 className="text-4xl font-black mb-6 font-display">Let's build the future of immunotherapy safety together.</h2>
+          <h2 className="text-4xl font-black mb-6">Let's build the future of immunotherapy safety together.</h2>
           <div className="flex justify-center gap-4">
             <Link 
               to="/" 
@@ -213,7 +214,7 @@ export function StrategyRoadmap() {
           <div className="flex flex-col items-center justify-center gap-6 mb-8">
             <div className="flex items-center gap-3 opacity-50">
               <img src="/logo.svg" alt="ImmunoSentry Logo" className="w-8 h-8" referrerPolicy="no-referrer" />
-              <span className="text-lg font-bold text-gray-900 tracking-wide font-display">
+              <span className="text-lg font-bold text-gray-900 tracking-wide">
                 Immuno<span className="text-indigo-600">Sentry</span>
               </span>
             </div>
@@ -234,6 +235,9 @@ export function StrategyRoadmap() {
               </a>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors">
                 <Github className="w-5 h-5" />
+              </a>
+              <a href="https://instagram.com/immunosentry" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors">
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>

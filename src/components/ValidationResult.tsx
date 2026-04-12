@@ -83,17 +83,17 @@ export function ValidationResult() {
   };
 
   return (
-    <section id="validation" className="py-24 bg-white border-t border-gray-100">
+    <section id="validation" className="py-32 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-3 flex items-center gap-2 font-display">
+        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="max-w-3xl">
+            <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center gap-2 font-display">
               <Database className="w-4 h-4" /> Model Validation
             </h2>
-            <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight font-display">
+            <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl font-display">
               Real-World <span className="text-indigo-600">Dataset</span> Verification.
             </h3>
-            <p className="mt-4 text-lg text-gray-500 max-w-2xl">
+            <p className="mt-6 text-xl text-gray-500 leading-relaxed">
               We validated ImmunoSentry against public clinical datasets from the TCGA-SKCM cohort and cBioPortal MSK-IMPACT trials.
             </p>
           </div>
@@ -117,12 +117,12 @@ export function ValidationResult() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Case Card */}
-          <div className="lg:col-span-1 bg-gray-50 p-8 rounded-3xl border border-gray-100">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-2 text-gray-900 font-bold">
+          <div className="lg:col-span-1 bg-gray-50/50 p-8 rounded-3xl border border-gray-100">
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-3 text-gray-900 font-bold">
                 <FileText className="w-5 h-5 text-indigo-600" /> Case ID: {VALIDATION_CASE.id}
               </div>
-              <span className="px-2 py-1 bg-indigo-100 text-indigo-700 text-[10px] font-bold rounded uppercase">
+              <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-[10px] font-bold rounded-full uppercase">
                 Verified Case
               </span>
             </div>
@@ -187,7 +187,7 @@ export function ValidationResult() {
                   className="h-full flex flex-col items-center justify-center text-center p-12 bg-red-50 rounded-3xl border border-red-100 shadow-sm"
                 >
                   <AlertTriangle className="w-12 h-12 text-red-600 mb-6" />
-                  <h4 className="text-lg font-bold text-red-900 font-display">Validation Failed</h4>
+                  <h4 className="text-lg font-bold text-red-900">Validation Failed</h4>
                   <p className="text-sm text-red-700 mt-2 max-w-xs">
                     {error}
                   </p>
@@ -203,7 +203,7 @@ export function ValidationResult() {
               {!result && !loading && !error && (
               <div className="h-full flex flex-col items-center justify-center text-center p-12 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
                 <Database className="w-12 h-12 text-gray-300 mb-4" />
-                <h4 className="text-lg font-bold text-gray-900 font-display">Awaiting Validation Run</h4>
+                <h4 className="text-lg font-bold text-gray-900">Awaiting Validation Run</h4>
                 <p className="text-sm text-gray-500 mt-2">Click the button to run the ImmunoSentry model against this real-world dataset case.</p>
               </div>
             )}
@@ -211,7 +211,7 @@ export function ValidationResult() {
             {loading && (
               <div className="h-full flex flex-col items-center justify-center text-center p-12 bg-white rounded-3xl border border-gray-100 shadow-sm">
                 <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mb-6" />
-                <h4 className="text-lg font-bold text-gray-900 font-display">Processing Clinical Data</h4>
+                <h4 className="text-lg font-bold text-gray-900">Processing Clinical Data</h4>
                 <p className="text-sm text-gray-500 mt-2">Correlating TCGA genomic signatures with ESMO 2025 predictive weights...</p>
               </div>
             )}
@@ -227,7 +227,7 @@ export function ValidationResult() {
                     <div className="flex items-center gap-2 text-indigo-200 text-xs font-bold uppercase tracking-widest mb-2">
                       <ShieldCheck className="w-4 h-4" /> AI Prediction Result
                     </div>
-                    <h4 className="text-3xl font-bold font-display">Model Match: <span className="text-emerald-400">92% Confidence</span></h4>
+                    <h4 className="text-3xl font-bold">Model Match: <span className="text-emerald-400">92% Confidence</span></h4>
                   </div>
                   <div className="px-4 py-2 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 text-sm font-bold">
                     irAE Risk: {result.riskScore}%
@@ -330,7 +330,7 @@ export function ValidationResult() {
               <BarChart3 className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-xl font-bold text-gray-900 font-display">Multi-Cohort Benchmark</h4>
+              <h4 className="text-xl font-bold text-gray-900">Multi-Cohort Benchmark</h4>
               <p className="text-sm text-gray-500">Cross-validation performance across independent ICI datasets.</p>
             </div>
           </div>

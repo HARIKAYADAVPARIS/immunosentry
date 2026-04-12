@@ -42,7 +42,7 @@ export function KnowledgeBase() {
           {BIOMARKERS.map((b, i) => (
             <div key={i} className="p-8 rounded-2xl border border-gray-100 bg-gray-50 hover:shadow-md transition-shadow">
               <div className="mb-4">{b.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{b.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{b.title}</h3>
               <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                 {b.description}
               </p>
@@ -60,7 +60,7 @@ export function KnowledgeBase() {
 
         <div className="mt-16 p-8 bg-indigo-900 rounded-3xl text-white relative overflow-hidden">
           <div className="relative z-10 max-w-3xl">
-            <h3 className="text-2xl font-bold mb-4 font-display">The Balancing Act</h3>
+            <h3 className="text-2xl font-bold mb-4">The Balancing Act</h3>
             <p className="text-indigo-100 leading-relaxed">
               Research shows a positive association between the development of irAEs and anti-tumour responses. 
               This "cryptic harm" is often a sign of a robust immune reaction where self-reactive T cells infiltrate both tumours and healthy organs. 
