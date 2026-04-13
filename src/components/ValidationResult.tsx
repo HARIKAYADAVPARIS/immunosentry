@@ -94,7 +94,7 @@ export function ValidationResult() {
               Real-World <span className="text-indigo-600">Dataset</span> Verification.
             </h3>
             <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-              We benchmarked ImmunoSentry against public clinical datasets from the TCGA-SKCM cohort and cBioPortal MSK-IMPACT trials, following ESMO 2025 guidelines.
+              We benchmarked ImmunoSentry against public clinical datasets from the TCGA-SKCM cohort and cBioPortal MSK-IMPACT trials, informed by ESMO TAT 2025 research.
             </p>
           </div>
           
@@ -108,7 +108,7 @@ export function ValidationResult() {
               <div className="flex items-baseline gap-2">
                 <span className="text-3xl font-black text-indigo-900">{PERFORMANCE_METRICS.auc}</span>
                 <span className="text-sm font-bold text-emerald-600 flex items-center gap-0.5">
-                  <Target className="w-3 h-3" /> High Accuracy
+                  <Target className="w-3 h-3" /> Retrospective Benchmark
                 </span>
               </div>
             </div>

@@ -262,7 +262,7 @@ export function Home() {
                     },
                     { 
                       title: "Regulatory Alignment", 
-                      desc: "Aligned with WHO and ESMO guidelines for AI.",
+                      desc: "Designed in reference to WHO Guidance on AI for Health (2021) and ESMO TAT 2025 research",
                       icon: <Activity className="w-5 h-5 text-indigo-600" />
                     },
                     { 
@@ -369,7 +369,7 @@ export function Home() {
                 © 2026 ImmunoSentry SAS · Based on Nature Communications (2022) 13:392 and ESMO TAT 2025 Abstracts 3P/4P · Research use only
               </p>
               <div className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">
-                Research tool only · Not a medical device · Not CE marked · Not FDA cleared · GDPR Principles Applied · HIPAA-Aware Architecture · ISO 27001 Roadmap · <Link to="/privacy" className="hover:text-indigo-600 transition-colors underline">Privacy Policy</Link>
+                Research tool only · Not a medical device · Not CE marked · Not FDA cleared · GDPR Principles Applied · HIPAA-Aware Architecture · <Link to="/privacy" className="hover:text-indigo-600 transition-colors underline">Privacy Policy</Link>
               </div>
             </div>
             <div className="flex gap-6">

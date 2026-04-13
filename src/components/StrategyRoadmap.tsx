@@ -59,7 +59,7 @@ export function StrategyRoadmap() {
               The Path to <span className="text-indigo-600">Dominance</span>.
             </h1>
             <p className="text-xl text-gray-500 leading-relaxed">
-              ImmunoSentry is not just a predictive tool; it is the infrastructure for the next generation of safe, effective immunotherapy. Here is how we build a defensible, multi-billion dollar enterprise.
+              ImmunoSentry is not just a predictive tool; it is the infrastructure for the next generation of safe, effective immunotherapy. Here is how we build a defensible, scalable enterprise.
             </p>
           </motion.div>
         </div>
@@ -127,7 +127,7 @@ export function StrategyRoadmap() {
               {
                 name: "Harika Yadav",
                 role: "Chief Scientific Officer",
-                desc: "Expert in clinical immunology and biomarker discovery. Leading the mechanistic biological modeling and ESMO 2025 alignment frameworks.",
+                desc: "Specialist in clinical pharmacology and immuno-oncology research. Harvard HMX Immuno-oncology certified. Leading the mechanistic biological modeling and ESMO TAT 2025 alignment frameworks.",
                 icon: <Microscope className="w-6 h-6" />
               },
               {
@@ -244,7 +244,7 @@ export function StrategyRoadmap() {
                   {
                     phase: "Phase 3: SaMD Certification",
                     title: "Class II Medical Device (FDA/EMA)",
-                    desc: "Full certification as 'Software as a Medical Device' (SaMD). Transitioning from 'Support' to 'Prescriptive' diagnostic status.",
+                    desc: "Full certification as 'Software as a Medical Device' (SaMD). Transitioning from 'Support' to 'Diagnostic support status'.",
                     status: "2027-2028"
                   }
                 ].map((step, i) => (
@@ -358,8 +358,6 @@ export function StrategyRoadmap() {
             <span>GDPR Principles Applied</span>
             <span>•</span>
             <span>HIPAA-Aware Architecture</span>
-            <span>•</span>
-            <span>ISO 27001 Roadmap</span>
           </div>
           <p className="text-[10px] text-gray-400 max-w-md mx-auto">
             This document contains proprietary strategic information for ImmunoSentry SAS.

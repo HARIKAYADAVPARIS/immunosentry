@@ -316,12 +316,12 @@ async def process_trial(file: UploadFile):
               </div>
 
               <div className="space-y-8">
-                {/* Clinician Report */}
+                {/* Research Report */}
                 <div className="bg-gray-900 p-10 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full -mr-32 -mt-32 blur-3xl group-hover:scale-110 transition-transform duration-700" />
                   <div className="relative z-10">
                     <div className="flex items-center gap-2 text-xs font-bold text-indigo-400 uppercase tracking-widest mb-8">
-                      <Zap className="w-4 h-4" /> Clinician Report (Trial-Ready)
+                      <Zap className="w-4 h-4" /> Research Report (Trial-Ready)
                     </div>
                     
                     <div className="space-y-8">
@@ -370,7 +370,7 @@ async def process_trial(file: UploadFile):
                           onClick={handleDownloadReport}
                           className="w-full py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 text-sm"
                         >
-                          <Download className="w-4 h-4" /> Export Clinical Report
+                          <Download className="w-4 h-4" /> Export Research Summary
                         </button>
                         <button 
                           className="w-full py-3 bg-white/10 text-white rounded-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2 text-sm border border-white/10"

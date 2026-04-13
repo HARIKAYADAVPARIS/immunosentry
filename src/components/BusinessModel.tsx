@@ -208,7 +208,7 @@ export function BusinessModel() {
               <span className="text-xl font-bold">Immuno<span className="text-indigo-400">Sentry</span> Enterprise</span>
             </div>
             <div className="text-[10px] font-bold text-indigo-200 uppercase tracking-widest">
-              Research tool only · Not a medical device · Not CE marked · Not FDA cleared · GDPR Principles Applied · HIPAA-Aware Architecture · ISO 27001 Roadmap
+              Research tool only · Not a medical device · Not CE marked · Not FDA cleared · GDPR Principles Applied · HIPAA-Aware Architecture · Privacy Policy
             </div>
           </div>
         </div>

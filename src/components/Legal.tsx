@@ -129,8 +129,6 @@ export function Legal() {
             <span>GDPR Principles Applied</span>
             <span>•</span>
             <span>HIPAA-Aware Architecture</span>
-            <span>•</span>
-            <span>ISO 27001 Roadmap</span>
           </div>
           <p className="text-xs text-gray-400 uppercase font-bold tracking-widest">
             © 2026 ImmunoSentry SAS · ESMO 2025 · All Rights Reserved
