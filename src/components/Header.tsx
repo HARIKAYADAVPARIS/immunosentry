@@ -1,4 +1,4 @@
-import { ShieldCheck, Activity, Info, Briefcase, Database, BarChart3, Zap, Target } from "lucide-react";
+import { ShieldCheck, Activity, Info, Briefcase, Database, BarChart3, Zap, Target, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Header() {
@@ -13,17 +13,17 @@ export function Header() {
             </span>
           </Link>
           <nav className="flex items-center gap-6">
+            <a href="#overview" className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1">
+              <Globe className="w-4 h-4" /> Overview
+            </a>
             <a href="#assessment" className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1">
               <Activity className="w-4 h-4" /> Assessment
             </a>
             <a href="#intervention-engine" className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1">
-              <Zap className="w-4 h-4" /> Intervention Engine
+              <Zap className="w-4 h-4" /> Timing Simulation
             </a>
             <a href="#real-world-validation" className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1">
-              <BarChart3 className="w-4 h-4" /> Real-World Validation
-            </a>
-            <a href="#validation" className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1">
-              <Database className="w-4 h-4" /> Validation
+              <BarChart3 className="w-4 h-4" /> Real-World Benchmarking
             </a>
             <Link to="/knowledge" className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1">
               <Info className="w-4 h-4" /> Knowledge Base

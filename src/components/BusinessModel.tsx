@@ -16,22 +16,22 @@ import { cn } from "../lib/utils";
 
 const REVENUE_STREAMS = [
   {
-    title: "Diagnostic Interpretation (CDx)",
-    icon: <CreditCard className="w-6 h-6 text-indigo-600" />,
-    description: "Immediate revenue through a royalty-based model. We partner with CLIA-certified labs to provide the 'ImmunoSentry Report' as a value-add interpretation layer for standard HLA/Microbiome sequencing.",
-    details: "Royalty: €350 - €500 per patient report. Zero integration cost for labs."
-  },
-  {
-    title: "Trial Rescue & Audit Services",
+    title: "Pharma Trial Enrichment",
     icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />,
-    description: "High-value consulting for stalled or failing Phase II/III trials. We perform retrospective 'Rescue Audits' to identify high-risk sub-populations, potentially saving trials from regulatory rejection.",
-    details: "Project Fee: €150k - €300k per audit report. 4-week turnaround."
+    description: "Patient stratification layer for ICI clinical trial enrollment. Pharma R&D teams use ImmunoSentry to identify high irAE-risk patients before randomization — enabling smarter trial design, fewer protocol amendments, and faster regulatory approval.",
+    details: "Project Fee: €200k–500k per trial"
   },
   {
-    title: "Strategic R&D Licensing",
-    icon: <Building2 className="w-6 h-6 text-amber-600" />,
-    description: "Long-term enterprise licensing for pharmaceutical R&D data lakes. Integration of our mechanistic engine into internal discovery pipelines for early-stage molecule de-risking.",
-    details: "Annual License: €500k+ per drug development program."
+    title: "Companion Diagnostic Licensing",
+    icon: <CreditCard className="w-6 h-6 text-indigo-600" />,
+    description: "Per-test royalty model with diagnostic labs providing HLA and microbiome sequencing. ImmunoSentry acts as the interpretive layer for raw sequencing data.",
+    details: "Royalty: €30–80 per test"
+  },
+  {
+    title: "Real World Evidence Data",
+    icon: <Globe className="w-6 h-6 text-amber-600" />,
+    description: "Aggregated anonymized data from trial partnerships provides real-world ICI toxicity intelligence. Pharma companies pay for dataset access to inform pipeline decisions.",
+    details: "Dataset Deal: €500k–2M per dataset deal"
   }
 ];
 
@@ -65,16 +65,16 @@ export function BusinessModel() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider mb-6">
-              <ShieldCheck className="w-3 h-3" /> ESMO 2025 Integrated
+              <ShieldCheck className="w-3 h-3" /> Based on ESMO TAT 2025 Abstracts 3P/4P
             </div>
             <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center gap-2 font-display">
               <Briefcase className="w-4 h-4" /> Strategic Framework
             </h2>
             <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl font-display">
-              Scaling <span className="text-indigo-600">Precision</span> Oncology.
+              Pharma R&D <span className="text-indigo-600">Intelligence</span> at Scale.
             </h3>
             <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-              ImmunoSentry is positioned at the intersection of diagnostic sequencing and clinical decision support, creating a sustainable ecosystem for immunotherapy safety.
+              ImmunoSentry serves pharma R&D teams as a patient stratification layer for ICI clinical trials — predicting which patients will be destroyed by a drug before the trial starts.
             </p>
           </div>
           <div className="flex gap-4">
@@ -177,7 +177,7 @@ export function BusinessModel() {
                 <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between relative z-10">
                   <div className="text-[10px] font-bold text-indigo-300 uppercase">ROI Ratio: {(savings / 0.25).toFixed(1)}x</div>
                   <div className="text-[10px] font-bold text-emerald-400 flex items-center gap-1">
-                    <ShieldCheck className="w-3 h-3" /> Validated Model
+                    <ShieldCheck className="w-3 h-3" /> Benchmarked Model
                   </div>
                 </div>
               </div>
@@ -207,10 +207,8 @@ export function BusinessModel() {
               <img src="/logo.svg" alt="ImmunoSentry Logo" className="w-8 h-8 brightness-0 invert" referrerPolicy="no-referrer" />
               <span className="text-xl font-bold">Immuno<span className="text-indigo-400">Sentry</span> Enterprise</span>
             </div>
-            <div className="flex gap-6 text-sm font-medium text-indigo-200">
-              <span>GDPR Compliant</span>
-              <span>HIPAA Ready</span>
-              <span>ISO 27001</span>
+            <div className="text-[10px] font-bold text-indigo-200 uppercase tracking-widest">
+              Research tool only · Not a medical device · Not CE marked · Not FDA cleared · GDPR Principles Applied · HIPAA-Aware Architecture · ISO 27001 Roadmap
             </div>
           </div>
         </div>

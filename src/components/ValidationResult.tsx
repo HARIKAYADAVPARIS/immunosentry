@@ -88,13 +88,13 @@ export function ValidationResult() {
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
-              <Database className="w-3 h-3" /> ESMO 2025 Integrated
+              <Database className="w-3 h-3" /> Based on ESMO TAT 2025 Abstracts 3P/4P
             </div>
             <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-6xl font-display">
               Real-World <span className="text-indigo-600">Dataset</span> Verification.
             </h3>
             <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-              We validated ImmunoSentry against public clinical datasets from the TCGA-SKCM cohort and cBioPortal MSK-IMPACT trials, following ESMO 2025 guidelines.
+              We benchmarked ImmunoSentry against public clinical datasets from the TCGA-SKCM cohort and cBioPortal MSK-IMPACT trials, following ESMO 2025 guidelines.
             </p>
           </div>
           
@@ -104,7 +104,7 @@ export function ValidationResult() {
               <BarChart3 className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">Validation AUC (cBioPortal)</div>
+              <div className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">Benchmark AUC (cBioPortal)</div>
               <div className="flex items-baseline gap-2">
                 <span className="text-3xl font-black text-indigo-900">{PERFORMANCE_METRICS.auc}</span>
                 <span className="text-sm font-bold text-emerald-600 flex items-center gap-0.5">
@@ -159,7 +159,7 @@ export function ValidationResult() {
               className="w-full py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-black transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-200"
             >
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Play className="w-5 h-5" />}
-              Run AI Cross-Validation
+              Run AI Cross-Benchmark
             </button>
             
             <div className="mt-6 pt-6 border-t border-gray-200">
@@ -187,7 +187,7 @@ export function ValidationResult() {
                   className="h-full flex flex-col items-center justify-center text-center p-12 bg-red-50 rounded-3xl border border-red-100 shadow-sm"
                 >
                   <AlertTriangle className="w-12 h-12 text-red-600 mb-6" />
-                  <h4 className="text-lg font-bold text-red-900">Validation Failed</h4>
+                  <h4 className="text-lg font-bold text-red-900">Benchmark Failed</h4>
                   <p className="text-sm text-red-700 mt-2 max-w-xs">
                     {error}
                   </p>
@@ -205,7 +205,7 @@ export function ValidationResult() {
                 <div className="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mb-6">
                   <Activity className="w-10 h-10 text-indigo-300" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900">Awaiting Validation Run</h4>
+                <h4 className="text-xl font-bold text-gray-900">Awaiting Benchmark Run</h4>
                 <p className="text-sm text-gray-500 mt-2 max-w-xs leading-relaxed">Click the button to run the ImmunoSentry model against this real-world dataset case.</p>
               </div>
             )}
@@ -373,7 +373,7 @@ export function ValidationResult() {
               "Consistent performance across tumor types and ICI regimens demonstrates generalizability of the ImmunoSentry framework."
             </p>
             <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-              Data: cBioPortal (Cerami et al. 2012); Validation methodology: ESMO TAT 2025
+              Data: cBioPortal (Cerami et al. 2012); Benchmarking methodology: ESMO TAT 2025
             </div>
           </div>
         </div>

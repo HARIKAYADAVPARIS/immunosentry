@@ -13,6 +13,7 @@ import {
   Database,
   Search,
   Cpu,
+  Microscope,
   Linkedin,
   Twitter,
   Github,
@@ -110,6 +111,70 @@ export function StrategyRoadmap() {
           </div>
         </section>
 
+        {/* Leadership Section */}
+        <section className="mb-32">
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center justify-center gap-2 font-display">
+              <Users className="w-4 h-4" /> Leadership & Scientific Advisory
+            </h2>
+            <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl font-display">
+              The Minds Behind <span className="text-indigo-600">ImmunoSentry</span>.
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {[
+              {
+                name: "Harika Yadav",
+                role: "Chief Scientific Officer",
+                desc: "Expert in clinical immunology and biomarker discovery. Leading the mechanistic biological modeling and ESMO 2025 alignment frameworks.",
+                icon: <Microscope className="w-6 h-6" />
+              },
+              {
+                name: "Krrishi Yadav",
+                role: "Chief AI Officer",
+                desc: "Architect of the ImmunoSentry Federated Learning engine. Specializing in explainable AI (XAI) and high-fidelity clinical simulation.",
+                icon: <Cpu className="w-6 h-6" />
+              }
+            ].map((member, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group"
+              >
+                <div className="p-10 bg-white rounded-[3rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all relative overflow-hidden text-center">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full -mr-16 -mt-16 blur-2xl opacity-50 group-hover:scale-150 transition-transform duration-700" />
+                  
+                  <div className="w-20 h-20 bg-indigo-600 rounded-3xl flex items-center justify-center text-white mx-auto mb-8 shadow-lg shadow-indigo-100 group-hover:rotate-6 transition-transform">
+                    {member.icon}
+                  </div>
+                  
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 font-display">{member.name}</h4>
+                  <div className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-6">{member.role}</div>
+                  
+                  <p className="text-gray-500 leading-relaxed mb-8 text-sm">
+                    {member.desc}
+                  </p>
+                  
+                  <div className="flex justify-center gap-4">
+                    <a 
+                      href={member.name === "Harika Yadav" ? "https://www.linkedin.com/in/harika-yadav-27914724a" : "#"} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="p-3 bg-gray-50 rounded-xl text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
         {/* Strategic Moats */}
         <section className="mb-32">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 flex items-center gap-3 font-display">
@@ -173,7 +238,7 @@ export function StrategyRoadmap() {
                   {
                     phase: "Phase 2: Clinical Trial Companion",
                     title: "Prospective Trial Stratification",
-                    desc: "Integrating into Phase II/III protocols as a secondary endpoint. Validating the 'Steroid Intervention Timing' engine in real-time.",
+                    desc: "Integrating into Phase II/III protocols as a secondary endpoint. Benchmarking the 'Steroid Timing Simulation' engine in real-time.",
                     status: "Q4 2026"
                   },
                   {
@@ -289,6 +354,13 @@ export function StrategyRoadmap() {
             </div>
           </div>
           <p className="text-xs text-gray-400 uppercase font-bold tracking-widest mb-4">Confidential Strategic Document</p>
+          <div className="flex justify-center gap-4 text-[10px] font-bold text-gray-300 uppercase tracking-widest mb-6">
+            <span>GDPR Principles Applied</span>
+            <span>•</span>
+            <span>HIPAA-Aware Architecture</span>
+            <span>•</span>
+            <span>ISO 27001 Roadmap</span>
+          </div>
           <p className="text-[10px] text-gray-400 max-w-md mx-auto">
             This document contains proprietary strategic information for ImmunoSentry SAS.
           </p>

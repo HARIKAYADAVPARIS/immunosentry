@@ -125,6 +125,13 @@ export function Legal() {
               </a>
             </div>
           </div>
+          <div className="flex justify-center gap-4 text-[10px] font-bold text-gray-300 uppercase tracking-widest mb-6">
+            <span>GDPR Principles Applied</span>
+            <span>•</span>
+            <span>HIPAA-Aware Architecture</span>
+            <span>•</span>
+            <span>ISO 27001 Roadmap</span>
+          </div>
           <p className="text-xs text-gray-400 uppercase font-bold tracking-widest">
             © 2026 ImmunoSentry SAS · ESMO 2025 · All Rights Reserved
           </p>

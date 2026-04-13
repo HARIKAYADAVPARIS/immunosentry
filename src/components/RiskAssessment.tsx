@@ -121,7 +121,7 @@ export function RiskAssessment() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
-            <Database className="w-3 h-3" /> ESMO 2025 Integrated
+            <Database className="w-3 h-3" /> Based on ESMO TAT 2025 Abstracts 3P/4P
           </div>
           <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-6xl font-display">
             Predictive <span className="text-indigo-600">Biomarker Analysis</span>.
@@ -430,7 +430,7 @@ export function RiskAssessment() {
 
                   <div className="flex items-center justify-between pt-6 border-t border-white/10">
                     <div className="flex items-center gap-2 text-[10px] font-bold text-indigo-400 uppercase tracking-widest">
-                      <ShieldCheck className="w-4 h-4" /> ESMO 2025 Validated
+                      <ShieldCheck className="w-4 h-4" /> ESMO 2025 Aligned
                     </div>
                     <button 
                       onClick={() => setResult(null)}

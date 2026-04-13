@@ -76,7 +76,7 @@ export function InterventionEngine() {
   const handleDownloadReport = () => {
     const drugName = DRUG_LIBRARY.find(d => d.id === selectedDrug)?.name || selectedDrug;
     const reportText = `
-IMMUNOSENTRY CLINICAL REPORT
+IMMUNOSENTRY RESEARCH REPORT
 ============================
 PATIENT ID: #123
 AGE: 62
@@ -95,19 +95,19 @@ MECHANISTIC ATTRIBUTION:
 • Macrophage IL-6: +${explanation.Macrophage_IL6}%
 • Cytokine Storm: +${explanation.Cytokine_storm}%
 
-INTERVENTION ANALYSIS:
-----------------------
+TIMING SIMULATION ANALYSIS:
+---------------------------
 Proposed Steroid Initiation: Day ${steroidDay}
 Projected Risk Reduction: ${reduction}%
 New Risk Score: ${(newRisk * 100).toFixed(0)}%
 
-CLINICAL RECOMMENDATION:
+RESEARCH INTERPRETATION:
 ------------------------
-Early steroid intervention on Day ${steroidDay} is projected to mitigate 
+Early steroid simulation on Day ${steroidDay} is projected to mitigate 
 the cytokine cascade and reduce pneumonitis risk by ${reduction}%.
 Monitor IL-6 levels closely between Day 3 and Day 7.
 
-Validated by ESMO 2025 Thresholds.
+Based on ESMO TAT 2025 Abstracts 3P/4P.
 `;
     const blob = new Blob([reportText], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
@@ -132,7 +132,7 @@ Validated by ESMO 2025 Thresholds.
 import pandas as pd
 import io
 
-app = FastAPI(title="ImmunoSentry Clinical API")
+app = FastAPI(title="ImmunoSentry Research API")
 
 @app.post("/trial-cohort")
 async def process_trial(file: UploadFile):
@@ -163,14 +163,13 @@ async def process_trial(file: UploadFile):
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
-            <ShieldCheck className="w-3 h-3" /> ESMO 2025 Validated
+            <ShieldCheck className="w-3 h-3" /> Based on ESMO TAT 2025 Abstracts 3P/4P
           </div>
           <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-6xl font-display">
-            Explainable <span className="text-indigo-600">Intervention</span> Engine.
+            Steroid <span className="text-indigo-600">Timing</span> Simulation.
           </h3>
           <p className="mt-6 text-xl text-gray-500 max-w-3xl leading-relaxed">
-            Deterministic biological simulation for irAE management. No machine learning. 
-            Pure mechanistic explainability based on ESMO 2025 validated thresholds.
+            Deterministic biological simulation of steroid timing based on cytokine cascade kinetics — benchmarked against thresholds from ESMO TAT 2025 Abstracts 3P/4P.
           </p>
         </div>
 
@@ -178,7 +177,7 @@ async def process_trial(file: UploadFile):
           {[
             { id: "patient", label: "Patient #123 Simulation", icon: <Activity className="w-4 h-4" /> },
             { id: "cohort", label: "Cohort Impact (n=500)", icon: <Users className="w-4 h-4" /> },
-            { id: "api", label: "Clinical API (FastAPI)", icon: <Terminal className="w-4 h-4" /> }
+            { id: "api", label: "Research API (FastAPI)", icon: <Terminal className="w-4 h-4" /> }
           ].map((tab) => (
             <button
               key={tab.id}
@@ -279,7 +278,7 @@ async def process_trial(file: UploadFile):
 
                   <div className="mt-8 p-6 bg-indigo-50 rounded-2xl border border-indigo-100">
                     <div className="flex items-center justify-between mb-4">
-                      <h5 className="text-xs font-bold text-indigo-900 uppercase">Steroid Intervention Timing</h5>
+                      <h5 className="text-xs font-bold text-indigo-900 uppercase">Steroid Timing Simulation</h5>
                       <span className="text-xs font-bold text-indigo-600">Day {steroidDay}</span>
                     </div>
                     <input 
@@ -361,9 +360,9 @@ async def process_trial(file: UploadFile):
                       </div>
 
                       <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
-                        <div className="text-xs font-bold text-emerald-400 uppercase mb-2">Intervention Impact</div>
+                        <div className="text-xs font-bold text-emerald-400 uppercase mb-2">Simulation Impact</div>
                         <div className="text-lg font-bold">Steroid Day {steroidDay} → {reduction}% Risk Reduction</div>
-                        <p className="text-[10px] text-gray-500 mt-2 italic">*ESMO 2025 validated thresholds</p>
+                        <p className="text-[10px] text-gray-500 mt-2 italic">*Based on ESMO TAT 2025 Abstracts 3P/4P</p>
                       </div>
 
                       <div className="grid grid-cols-1 gap-3">
@@ -513,7 +512,7 @@ async def process_trial(file: UploadFile):
                       "Excel/CSV upload for trial cohorts",
                       "Deterministic biological engine (No ML drift)",
                       "Real-time counterfactual intervention analysis",
-                      "Clinician-ready PDF report generation"
+                      "Researcher-ready PDF report generation"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-xs text-indigo-700">
                         <CheckCircle2 className="w-4 h-4 mt-0.5 text-indigo-500" />
@@ -523,10 +522,10 @@ async def process_trial(file: UploadFile):
                   </ul>
                 </div>
                 <div className="p-8 bg-gray-900 rounded-3xl text-white">
-                  <h5 className="text-sm font-bold mb-4">Clinical Summary</h5>
+                  <h5 className="text-sm font-bold mb-4">Research Summary</h5>
                   <div className="space-y-4 text-xs text-gray-400 leading-relaxed">
                     <p>
-                      <span className="text-white font-bold">CLINICAL DECISION:</span><br />
+                      <span className="text-white font-bold">RESEARCH INTERPRETATION:</span><br />
                       Patient #123 → Steroid Day 5 → 92% pneumonitis prevention
                     </p>
                     <p>
@@ -534,7 +533,7 @@ async def process_trial(file: UploadFile):
                       500 patients → {highRiskCount} high-risk flagged → €3M/trial saved
                     </p>
                     <p>
-                      <span className="text-white font-bold">DEPLOYMENT:</span><br />
+                      <span className="text-white font-bold">RESEARCH DEPLOYMENT:</span><br />
                       FastAPI → Excel upload → Risk dashboard<br />
                       500 patients &lt;1min, €0.08/patient
                     </p>

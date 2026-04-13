@@ -31,20 +31,20 @@ export function Home() {
                 >
                   <div className="flex flex-wrap items-center gap-4 mb-6">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider">
-                      <img src="/logo.svg" alt="Logo" className="w-4 h-4" referrerPolicy="no-referrer" /> ESMO 2025 Integrated Tool
+                      <img src="/logo.svg" alt="Logo" className="w-4 h-4" referrerPolicy="no-referrer" /> Based on ESMO TAT 2025 Abstracts 3P/4P
                     </div>
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider border border-emerald-100">
-                      <ShieldCheck className="w-3 h-3" /> Validated · AUC 0.84 · n=1,662 patients
+                      <ShieldCheck className="w-3 h-3" /> Retrospective Benchmark · AUC 0.84 · n=1,662 patients · cBioPortal (Cerami et al. 2012)
                     </div>
                   </div>
                   <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight sm:text-7xl mb-8 text-balance">
                     Predicting <span className="text-indigo-600">irAEs</span> & Survival Outcomes.
                   </h1>
                   <p className="text-xl text-gray-500 leading-relaxed mb-4 text-balance">
-                    ImmunoSentry leverages ESMO 2025 clinical data, genetic HLA alleles, and gut microbial abundance to provide <span className="text-indigo-600 font-bold">Trial Rescue Audits</span> and <span className="text-indigo-600 font-bold">Diagnostic Interpretation</span> for global oncology pipelines.
+                    ImmunoSentry leverages ESMO TAT 2025 clinical data, genetic HLA alleles, and gut microbial abundance to provide <span className="text-indigo-600 font-bold">Trial Rescue Audits</span> and <span className="text-indigo-600 font-bold">Research Interpretation</span> for global oncology pipelines.
                   </p>
                   <p className="text-lg text-indigo-600 font-medium mb-12 max-w-2xl">
-                    The only platform combining HLA genetics, gut microbiome signatures, and a deterministic cytokine cascade simulator for steroid intervention timing.
+                    The only platform combining HLA genetics, gut microbiome signatures, and a deterministic cytokine cascade simulator for steroid timing simulation in ICI therapy — built for pharma R&D, not clinical practice.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <a 
@@ -102,7 +102,7 @@ export function Home() {
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">Cytokine Cascade Simulator</h3>
                     <p className="text-indigo-200 text-sm leading-relaxed">
-                      Deterministic biological simulation for steroid intervention timing — the only mechanistic irAE engine validated against ESMO 2025 thresholds.
+                      Deterministic biological simulation for steroid timing simulation — the only mechanistic irAE engine benchmarked against thresholds from ESMO TAT 2025 Abstracts 3P/4P.
                     </p>
                   </div>
                   <a 
@@ -159,19 +159,19 @@ export function Home() {
                   icon: <Activity className="w-6 h-6" />
                 },
                 { 
-                  title: "Intervention Engine", 
+                  title: "Timing Simulation", 
                   desc: "Mechanistic cytokine simulation for optimal steroid timing.",
                   link: "#intervention-engine",
                   icon: <Zap className="w-6 h-6" />
                 },
                 { 
-                  title: "Real-World Validation", 
+                  title: "Real-World Benchmarking", 
                   desc: "Live benchmarking against cBioPortal and MSK-IMPACT cohorts.",
                   link: "#real-world-validation",
                   icon: <BarChart3 className="w-6 h-6" />
                 },
                 { 
-                  title: "Model Validation", 
+                  title: "Model Benchmarking", 
                   desc: "Verified performance metrics (AUC 0.84) across independent datasets.",
                   link: "#validation",
                   icon: <Database className="w-6 h-6" />
@@ -240,12 +240,12 @@ export function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
               <div>
-                <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4">Deployment Readiness</h2>
+                <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4">Research Integration Readiness</h2>
                 <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl mb-8 font-display">
-                  Built for <span className="text-indigo-600">Clinical Adoption</span>.
+                  Built for <span className="text-indigo-600">Research Integration</span>.
                 </h3>
                 <p className="text-xl text-gray-500 mb-12 leading-relaxed">
-                  Healthcare adoption of AI is only possible when models are transparent, verifiable, and explainable. ImmunoSentry is designed from the ground up to meet these requirements.
+                  Research integration of AI is only possible when models are transparent, verifiable, and explainable. ImmunoSentry is designed from the ground up to meet these requirements.
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -257,7 +257,7 @@ export function Home() {
                     },
                     { 
                       title: "Verifiable Benchmarks", 
-                      desc: "Validated against TCGA and cBioPortal datasets.",
+                      desc: "Benchmarked against TCGA and cBioPortal datasets.",
                       icon: <Database className="w-5 h-5 text-indigo-600" />
                     },
                     { 
@@ -293,16 +293,16 @@ export function Home() {
                   </div>
                   <div className="space-y-4 font-mono text-xs text-gray-600">
                     <div className="p-3 bg-gray-50 rounded-lg border border-gray-100">
-                      <span className="text-indigo-600 font-bold">[AUDIT]</span> Model prediction generated for Case #A2-A0ET
+                      <span className="text-indigo-600 font-bold">[LOG]</span> Research prediction generated for Case #A2-A0ET
                     </div>
                     <div className="p-3 bg-gray-50 rounded-lg border border-gray-100">
                       <span className="text-emerald-600 font-bold">[XAI]</span> Feature importance calculated: Gut Microbiome (0.84)
                     </div>
                     <div className="p-3 bg-gray-50 rounded-lg border border-gray-100">
-                      <span className="text-indigo-600 font-bold">[AUDIT]</span> Evidence trace mapped to Nature Comm. 2022
+                      <span className="text-indigo-600 font-bold">[LOG]</span> Evidence trace mapped to Nature Comm. 2022
                     </div>
                     <div className="p-3 bg-gray-50 rounded-lg border border-gray-100">
-                      <span className="text-amber-600 font-bold">[WARN]</span> High risk of Colitis detected; Alerting clinician.
+                      <span className="text-amber-600 font-bold">[FLAG]</span> High irAE risk detected; Flagging for researcher review.
                     </div>
                   </div>
                 </div>
@@ -334,8 +334,8 @@ export function Home() {
                 <h4 className="text-xs font-bold text-gray-900 uppercase tracking-widest">Platform</h4>
                 <ul className="space-y-2">
                   <li><a href="#assessment" className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">Risk Assessment</a></li>
-                  <li><a href="#intervention-engine" className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">Intervention Engine</a></li>
-                  <li><a href="#real-world-validation" className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">Validation</a></li>
+                  <li><a href="#intervention-engine" className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">Timing Simulation</a></li>
+                  <li><a href="#real-world-validation" className="text-sm text-gray-500 hover:text-indigo-600 transition-colors">Benchmarking</a></li>
                 </ul>
               </div>
               <div className="space-y-4">
@@ -364,9 +364,14 @@ export function Home() {
           </div>
           
           <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-gray-400">
-              © 2026 ImmunoSentry SAS. Based on ESMO 2025 & Nature Communications (2022) 13:392.
-            </p>
+            <div className="flex flex-col gap-2">
+              <p className="text-xs text-gray-400">
+                © 2026 ImmunoSentry SAS · Based on Nature Communications (2022) 13:392 and ESMO TAT 2025 Abstracts 3P/4P · Research use only
+              </p>
+              <div className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">
+                Research tool only · Not a medical device · Not CE marked · Not FDA cleared · GDPR Principles Applied · HIPAA-Aware Architecture · ISO 27001 Roadmap · <Link to="/privacy" className="hover:text-indigo-600 transition-colors underline">Privacy Policy</Link>
+              </div>
+            </div>
             <div className="flex gap-6">
               <Link to="/legal" className="text-xs text-gray-400 hover:text-indigo-600 transition-colors">Privacy</Link>
               <Link to="/legal" className="text-xs text-gray-400 hover:text-indigo-600 transition-colors">Terms</Link>
