@@ -64,6 +64,9 @@ export function BusinessModel() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider mb-6">
+              <ShieldCheck className="w-3 h-3" /> ESMO 2025 Integrated
+            </div>
             <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center gap-2 font-display">
               <Briefcase className="w-4 h-4" /> Strategic Framework
             </h2>

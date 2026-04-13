@@ -300,14 +300,17 @@ async def process_trial(file: UploadFile):
                 {/* Attribution Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {[
-                    { label: "T-cell Activation", value: explanation.T_cell_activation, color: "text-indigo-600" },
-                    { label: "HLA-B27 Sensitivity", value: explanation.HLA_B27, color: "text-blue-600" },
-                    { label: "Macrophage Response", value: explanation.Macrophage_IL6, color: "text-amber-600" },
-                    { label: "Cytokine Storm", value: explanation.Cytokine_storm, color: "text-red-600" }
+                    { label: "T-cell Activation", value: explanation.T_cell_activation, color: "text-indigo-600", bg: "bg-indigo-50/50" },
+                    { label: "HLA-B27 Sensitivity", value: explanation.HLA_B27, color: "text-blue-600", bg: "bg-blue-50/50" },
+                    { label: "Macrophage Response", value: explanation.Macrophage_IL6, color: "text-amber-600", bg: "bg-amber-50/50" },
+                    { label: "Cytokine Storm", value: explanation.Cytokine_storm, color: "text-red-600", bg: "bg-red-50/50" }
                   ].map((item, i) => (
-                    <div key={i} className="p-6 bg-gray-50/50 rounded-3xl border border-gray-100 text-center group hover:bg-white hover:shadow-xl transition-all">
-                      <div className="text-[10px] font-bold text-gray-400 uppercase mb-3 tracking-widest">{item.label}</div>
-                      <div className={cn("text-3xl font-black", item.color)}>+{item.value}%</div>
+                    <div key={i} className={cn(
+                      "p-8 rounded-[2.5rem] border border-gray-100 text-center group hover:shadow-2xl hover:-translate-y-1 transition-all duration-500",
+                      item.bg
+                    )}>
+                      <div className="text-[10px] font-bold text-gray-400 uppercase mb-4 tracking-widest">{item.label}</div>
+                      <div className={cn("text-4xl font-black", item.color)}>+{item.value}%</div>
                     </div>
                   ))}
                 </div>
@@ -315,23 +318,21 @@ async def process_trial(file: UploadFile):
 
               <div className="space-y-8">
                 {/* Clinician Report */}
-                <div className="bg-gray-900 p-8 rounded-3xl text-white shadow-2xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 p-4 opacity-10">
-                    <FileText className="w-24 h-24" />
-                  </div>
+                <div className="bg-gray-900 p-10 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full -mr-32 -mt-32 blur-3xl group-hover:scale-110 transition-transform duration-700" />
                   <div className="relative z-10">
-                    <div className="flex items-center gap-2 text-xs font-bold text-indigo-400 uppercase tracking-widest mb-6">
+                    <div className="flex items-center gap-2 text-xs font-bold text-indigo-400 uppercase tracking-widest mb-8">
                       <Zap className="w-4 h-4" /> Clinician Report (Trial-Ready)
                     </div>
                     
-                    <div className="space-y-6">
+                    <div className="space-y-8">
                       <div>
-                        <div className="text-2xl font-black mb-1">PATIENT #123 – HIGH RISK</div>
-                        <div className="flex items-center gap-2">
-                          <div className="inline-flex items-center gap-1 px-2 py-1 bg-red-500/20 text-red-400 rounded text-[10px] font-bold uppercase">
+                        <div className="text-3xl font-black mb-2 tracking-tight">PATIENT #123</div>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <div className="inline-flex items-center gap-1 px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-[10px] font-bold uppercase border border-red-500/30">
                             {(timeline[timeline.length-1].risk * 100).toFixed(0)}% Pneumonitis Risk
                           </div>
-                          <div className="inline-flex items-center gap-1 px-2 py-1 bg-indigo-500/20 text-indigo-300 rounded text-[10px] font-bold uppercase border border-indigo-500/30">
+                          <div className="inline-flex items-center gap-1 px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-[10px] font-bold uppercase border border-indigo-500/30">
                             {DRUG_LIBRARY.find(d => d.id === selectedDrug)?.name}
                           </div>
                         </div>

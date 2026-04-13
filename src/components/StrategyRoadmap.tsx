@@ -63,6 +63,53 @@ export function StrategyRoadmap() {
           </motion.div>
         </div>
 
+        {/* What We Do Section */}
+        <section className="mb-32">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center gap-2 font-display">
+                <Zap className="w-4 h-4" /> What We Do
+              </h2>
+              <h3 className="text-3xl font-bold text-gray-900 font-display">
+                Engineering <span className="text-indigo-600">Clinical Success</span>.
+              </h3>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-10 bg-white rounded-[3rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all group relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full -mr-32 -mt-32 blur-3xl opacity-50 group-hover:scale-110 transition-transform duration-700" />
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-indigo-100">
+                    <Target className="w-7 h-7" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 font-display">Trial Design & Stratification</h4>
+                </div>
+                <p className="text-xl text-gray-600 leading-relaxed max-w-4xl">
+                  ImmunoSentry reduces trial risk by identifying toxic phenotypes at the randomization stage. Our platform enables Pharma R&D teams to optimize clinical protocols, personalize intervention timing, and maximize the therapeutic window—transforming high-attrition trials into precision medicine success stories.
+                </p>
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <div className="px-4 py-2 bg-indigo-50 rounded-full text-xs font-bold text-indigo-600 uppercase tracking-wider border border-indigo-100">
+                    Randomization Optimization
+                  </div>
+                  <div className="px-4 py-2 bg-emerald-50 rounded-full text-xs font-bold text-emerald-600 uppercase tracking-wider border border-emerald-100">
+                    Attrition Mitigation
+                  </div>
+                  <div className="px-4 py-2 bg-amber-50 rounded-full text-xs font-bold text-amber-600 uppercase tracking-wider border border-amber-100">
+                    Protocol Personalization
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Strategic Moats */}
         <section className="mb-32">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 flex items-center gap-3 font-display">

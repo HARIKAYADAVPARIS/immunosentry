@@ -201,18 +201,20 @@ export function ValidationResult() {
               )}
 
               {!result && !loading && !error && (
-              <div className="h-full flex flex-col items-center justify-center text-center p-12 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
-                <Database className="w-12 h-12 text-gray-300 mb-4" />
-                <h4 className="text-lg font-bold text-gray-900">Awaiting Validation Run</h4>
-                <p className="text-sm text-gray-500 mt-2">Click the button to run the ImmunoSentry model against this real-world dataset case.</p>
+              <div className="h-full flex flex-col items-center justify-center text-center p-12 bg-white rounded-[2.5rem] border-2 border-dashed border-gray-100">
+                <div className="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mb-6">
+                  <Activity className="w-10 h-10 text-indigo-300" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900">Awaiting Validation Run</h4>
+                <p className="text-sm text-gray-500 mt-2 max-w-xs leading-relaxed">Click the button to run the ImmunoSentry model against this real-world dataset case.</p>
               </div>
             )}
 
             {loading && (
-              <div className="h-full flex flex-col items-center justify-center text-center p-12 bg-white rounded-3xl border border-gray-100 shadow-sm">
+              <div className="h-full flex flex-col items-center justify-center text-center p-12 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm">
                 <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mb-6" />
-                <h4 className="text-lg font-bold text-gray-900">Processing Clinical Data</h4>
-                <p className="text-sm text-gray-500 mt-2">Correlating TCGA genomic signatures with ESMO 2025 predictive weights...</p>
+                <h4 className="text-xl font-bold text-gray-900">Processing Clinical Data</h4>
+                <p className="text-sm text-gray-500 mt-2 max-w-xs">Correlating TCGA genomic signatures with ESMO 2025 predictive weights...</p>
               </div>
             )}
 
@@ -220,19 +222,21 @@ export function ValidationResult() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-indigo-600 p-10 rounded-3xl text-white shadow-2xl shadow-indigo-200 h-full flex flex-col"
+                className="bg-gray-900 p-10 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden group h-full flex flex-col"
               >
-                <div className="flex justify-between items-start mb-8">
-                  <div>
-                    <div className="flex items-center gap-2 text-indigo-200 text-xs font-bold uppercase tracking-widest mb-2">
-                      <ShieldCheck className="w-4 h-4" /> AI Prediction Result
+                <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full -mr-32 -mt-32 blur-3xl group-hover:scale-110 transition-transform duration-700" />
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="flex justify-between items-start mb-8">
+                    <div>
+                      <div className="flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-2">
+                        <ShieldCheck className="w-4 h-4" /> AI Prediction Result
+                      </div>
+                      <h4 className="text-4xl font-black tracking-tight">Model Match: <span className="text-emerald-400">92%</span></h4>
                     </div>
-                    <h4 className="text-3xl font-bold">Model Match: <span className="text-emerald-400">92% Confidence</span></h4>
+                    <div className="px-4 py-2 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 text-sm font-bold">
+                      irAE Risk: {result.riskScore}%
+                    </div>
                   </div>
-                  <div className="px-4 py-2 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 text-sm font-bold">
-                    irAE Risk: {result.riskScore}%
-                  </div>
-                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div className="space-y-4">
@@ -319,7 +323,8 @@ export function ValidationResult() {
                     View in TCGA Portal <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
-              </motion.div>
+              </div>
+            </motion.div>
             )}
             </AnimatePresence>
           </div>

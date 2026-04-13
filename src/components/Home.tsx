@@ -22,43 +22,68 @@ export function Home() {
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-3xl">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="max-w-3xl">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="flex flex-wrap items-center gap-4 mb-6">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider">
+                      <img src="/logo.svg" alt="Logo" className="w-4 h-4" referrerPolicy="no-referrer" /> ESMO 2025 Integrated Tool
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider border border-emerald-100">
+                      <ShieldCheck className="w-3 h-3" /> Validated · AUC 0.84 · n=1,662 patients
+                    </div>
+                  </div>
+                  <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight sm:text-7xl mb-8 text-balance">
+                    Predicting <span className="text-indigo-600">irAEs</span> & Survival Outcomes.
+                  </h1>
+                  <p className="text-xl text-gray-500 leading-relaxed mb-4 text-balance">
+                    ImmunoSentry leverages ESMO 2025 clinical data, genetic HLA alleles, and gut microbial abundance to provide <span className="text-indigo-600 font-bold">Trial Rescue Audits</span> and <span className="text-indigo-600 font-bold">Diagnostic Interpretation</span> for global oncology pipelines.
+                  </p>
+                  <p className="text-lg text-indigo-600 font-medium mb-12 max-w-2xl">
+                    The only platform combining HLA genetics, gut microbiome signatures, and a deterministic cytokine cascade simulator for steroid intervention timing.
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <a 
+                      href="#assessment" 
+                      className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all flex items-center gap-2 shadow-lg shadow-indigo-200"
+                    >
+                      Start Assessment <ArrowRight className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href="#overview" 
+                      className="px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center gap-2"
+                    >
+                      Platform Overview <ChevronDown className="w-5 h-5" />
+                    </a>
+                  </div>
+                </motion.div>
+              </div>
+
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative hidden lg:block"
               >
-                <div className="flex flex-wrap items-center gap-4 mb-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider">
-                    <img src="/logo.svg" alt="Logo" className="w-4 h-4" referrerPolicy="no-referrer" /> ESMO 2025 Integrated Tool
-                  </div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider border border-emerald-100">
-                    <ShieldCheck className="w-3 h-3" /> Validated · AUC 0.84 · n=1,662 patients · cBioPortal
-                  </div>
+                <div className="relative rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(79,70,229,0.15)] border border-gray-100 bg-white p-3">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-emerald-500/5 pointer-events-none" />
+                  <img 
+                    src="/hero-infographic.png" 
+                    alt="Prevent Immunotherapy Patient Dropout - ImmunoSentry Model" 
+                    className="rounded-[2.5rem] w-full h-auto shadow-sm"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200&h=900";
+                    }}
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
-                <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight sm:text-7xl mb-8 text-balance">
-                  Predicting <span className="text-indigo-600">irAEs</span> & Survival Outcomes.
-                </h1>
-                <p className="text-xl text-gray-500 leading-relaxed mb-4 text-balance">
-                  ImmunoSentry leverages ESMO 2025 clinical data, genetic HLA alleles, and gut microbial abundance to provide <span className="text-indigo-600 font-bold">Trial Rescue Audits</span> and <span className="text-indigo-600 font-bold">Diagnostic Interpretation</span> for global oncology pipelines.
-                </p>
-                <p className="text-lg text-indigo-600 font-medium mb-12 max-w-2xl">
-                  The only platform combining HLA genetics, gut microbiome signatures, and a deterministic cytokine cascade simulator for steroid intervention timing.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a 
-                    href="#assessment" 
-                    className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all flex items-center gap-2 shadow-lg shadow-indigo-200"
-                  >
-                    Start Assessment <ArrowRight className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href="#overview" 
-                    className="px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center gap-2"
-                  >
-                    Platform Overview <ChevronDown className="w-5 h-5" />
-                  </a>
-                </div>
+                {/* Floating Stats or Accents */}
+                <div className="absolute -top-6 -right-6 w-32 h-32 bg-indigo-100/50 rounded-full blur-3xl -z-10" />
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-emerald-100/50 rounded-full blur-3xl -z-10" />
               </motion.div>
             </div>
 
