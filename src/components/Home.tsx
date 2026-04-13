@@ -44,7 +44,7 @@ export function Home() {
                     ImmunoSentry leverages ESMO TAT 2025 clinical data, genetic HLA alleles, and gut microbial abundance to provide <span className="text-indigo-600 font-bold">Trial Rescue Audits</span> and <span className="text-indigo-600 font-bold">Research Interpretation</span> for global oncology pipelines.
                   </p>
                   <p className="text-lg text-indigo-600 font-medium mb-12 max-w-2xl">
-                    The only platform combining HLA genetics, gut microbiome signatures, and a deterministic cytokine cascade simulator for steroid timing simulation in ICI therapy — built for pharma R&D, not clinical practice.
+                    The only platform combining HLA genetics, gut microbiome signatures, and a deterministic cytokine cascade simulator for steroid timing simulation in ICI therapy — built for pharma R&D.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <a 
