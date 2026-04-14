@@ -305,11 +305,14 @@ async def process_trial(file: UploadFile):
                     { label: "Cytokine Storm", value: explanation.Cytokine_storm, color: "text-red-600", bg: "bg-red-50/50" }
                   ].map((item, i) => (
                     <div key={i} className={cn(
-                      "p-8 rounded-[2.5rem] border border-gray-100 text-center group hover:shadow-2xl hover:-translate-y-1 transition-all duration-500",
+                      "p-8 rounded-[2.5rem] border border-gray-100 text-center group hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 relative overflow-hidden",
                       item.bg
                     )}>
-                      <div className="text-[10px] font-bold text-gray-400 uppercase mb-4 tracking-widest">{item.label}</div>
-                      <div className={cn("text-4xl font-black", item.color)}>+{item.value}%</div>
+                      <div className="absolute inset-0 bg-grid opacity-10" />
+                      <div className="relative z-10">
+                        <div className="text-[10px] font-bold text-gray-400 uppercase mb-4 tracking-widest">{item.label}</div>
+                        <div className={cn("text-4xl font-black font-mono", item.color)}>+{item.value}%</div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -318,6 +321,7 @@ async def process_trial(file: UploadFile):
               <div className="space-y-8">
                 {/* Research Report */}
                 <div className="bg-gray-900 p-10 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-grid opacity-5" />
                   <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full -mr-32 -mt-32 blur-3xl group-hover:scale-110 transition-transform duration-700" />
                   <div className="relative z-10">
                     <div className="flex items-center gap-2 text-xs font-bold text-indigo-400 uppercase tracking-widest mb-8">
@@ -326,9 +330,9 @@ async def process_trial(file: UploadFile):
                     
                     <div className="space-y-8">
                       <div>
-                        <div className="text-3xl font-black mb-2 tracking-tight">PATIENT #123</div>
+                        <div className="text-3xl font-black mb-2 tracking-tight font-mono">PATIENT #123</div>
                         <div className="flex flex-wrap items-center gap-2">
-                          <div className="inline-flex items-center gap-1 px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-[10px] font-bold uppercase border border-red-500/30">
+                          <div className="inline-flex items-center gap-1 px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-[10px] font-bold uppercase border border-red-500/30 font-mono">
                             {(timeline[timeline.length-1].risk * 100).toFixed(0)}% Pneumonitis Risk
                           </div>
                           <div className="inline-flex items-center gap-1 px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-[10px] font-bold uppercase border border-indigo-500/30">
@@ -340,19 +344,19 @@ async def process_trial(file: UploadFile):
                       <div className="space-y-3">
                         <div className="text-xs font-bold text-gray-400 uppercase">Mechanistic Drivers</div>
                         <ul className="space-y-2">
-                          <li className="text-xs flex items-start gap-2">
+                          <li className="text-xs flex items-start gap-2 font-mono">
                             <ChevronRight className="w-3 h-3 mt-0.5 text-indigo-400" />
                             <span>T-cells: +{explanation.T_cell_activation}% (IFNγ {timeline[0].IFNγ}pg/ml &gt; 60pg/ml*)</span>
                           </li>
-                          <li className="text-xs flex items-start gap-2">
+                          <li className="text-xs flex items-start gap-2 font-mono">
                             <ChevronRight className="w-3 h-3 mt-0.5 text-indigo-400" />
                             <span>HLA-B27: +{explanation.HLA_B27}% (25% sensitivity boost)</span>
                           </li>
-                          <li className="text-xs flex items-start gap-2">
+                          <li className="text-xs flex items-start gap-2 font-mono">
                             <ChevronRight className="w-3 h-3 mt-0.5 text-indigo-400" />
                             <span>Macrophages: +{explanation.Macrophage_IL6}% (IL6 {timeline[4].IL6}pg/ml &gt; 200pg/ml)</span>
                           </li>
-                          <li className="text-xs flex items-start gap-2">
+                          <li className="text-xs flex items-start gap-2 font-mono">
                             <ChevronRight className="w-3 h-3 mt-0.5 text-indigo-400" />
                             <span>Cytokine storm: +{explanation.Cytokine_storm}% (2x amplification)</span>
                           </li>
@@ -399,20 +403,23 @@ async def process_trial(file: UploadFile):
                   <div className="bg-gray-50 p-6 rounded-3xl border border-gray-100 border-dashed">
                     <div className="flex items-center justify-between mb-4">
                       <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Multi-Omic Expansion</h4>
-                      <span className="px-2 py-0.5 bg-gray-200 text-gray-500 text-[8px] font-bold rounded uppercase">Roadmap</span>
+                      <span className="px-2 py-0.5 bg-emerald-100 text-emerald-600 text-[8px] font-bold rounded uppercase">Active</span>
                     </div>
-                    <div className="space-y-3 opacity-40">
+                    <div className="space-y-3">
                       <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center border border-gray-100">
+                          <ShieldCheck className="w-4 h-4 text-indigo-600" />
+                        </div>
+                        <div>
+                          <div className="text-[10px] font-bold text-gray-900">PRSAD Genetic Risk</div>
+                          <div className="text-[8px] text-gray-500">GeRI Cohort (n=1,302) Integration</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3 opacity-40">
                         <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
                           <Layers className="w-4 h-4 text-gray-400" />
                         </div>
                         <div className="text-[10px] font-bold text-gray-500">Spatial Transcriptomics</div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                          <Activity className="w-4 h-4 text-gray-400" />
-                        </div>
-                        <div className="text-[10px] font-bold text-gray-500">Serum Proteomics (IL-17/IL-22)</div>
                       </div>
                     </div>
                   </div>

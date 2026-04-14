@@ -72,7 +72,8 @@ export function RiskAssessment() {
     gender: "Male",
     priorSurgery: false,
     tumorGrade: "G2",
-    charlsonScore: 0
+    charlsonScore: 0,
+    prsadRisk: 'low'
   });
 
   const handleToggleHLA = (hla: string) => {
@@ -245,6 +246,40 @@ export function RiskAssessment() {
                       </button>
                     ))}
                   </div>
+                </div>
+
+                {/* PRSAD Risk */}
+                <div>
+                  <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4" /> Autoimmune Polygenic Risk (PRSAD)
+                  </label>
+                  <div className="grid grid-cols-2 gap-4">
+                    <button
+                      onClick={() => setFormData({ ...formData, prsadRisk: 'low' })}
+                      className={cn(
+                        "px-5 py-3 rounded-2xl text-xs font-bold transition-all border",
+                        formData.prsadRisk === 'low'
+                          ? "bg-emerald-600 text-white border-emerald-600"
+                          : "bg-white text-gray-600 border-gray-200 hover:border-emerald-300"
+                      )}
+                    >
+                      Low Risk (Bottom Quintile)
+                    </button>
+                    <button
+                      onClick={() => setFormData({ ...formData, prsadRisk: 'high' })}
+                      className={cn(
+                        "px-5 py-3 rounded-2xl text-xs font-bold transition-all border",
+                        formData.prsadRisk === 'high'
+                          ? "bg-red-600 text-white border-red-600"
+                          : "bg-white text-gray-600 border-gray-200 hover:border-red-300"
+                      )}
+                    >
+                      High Risk (Top Quintile)
+                    </button>
+                  </div>
+                  <p className="mt-2 text-[10px] text-gray-400 font-medium italic">
+                    *Based on GeRI Cohort (n=1,302): High PRSAD correlates with 4.8x early ICI cessation risk.
+                  </p>
                 </div>
 
                 {/* Microbiome Sliders */}

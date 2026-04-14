@@ -219,6 +219,24 @@ export function StrategyRoadmap() {
           </div>
         </section>
 
+        {/* Pilot Framework */}
+        <section className="mb-32">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-wider mb-6">
+              <Zap className="w-3 h-3" /> Active Pilot Framework
+            </div>
+            <p className="text-lg text-gray-600 leading-relaxed font-medium">
+              Our structured 12-week Pilot Framework enables rapid R&D integration via secure API ingestion and local Federated Learning nodes, allowing teams to validate mechanistic simulations on proprietary cohorts with zero data exfiltration. 
+              This model ensures absolute data sovereignty while accelerating the path to prospective trial stratification.
+            </p>
+          </motion.div>
+        </section>
+
         {/* Regulatory Roadmap */}
         <section className="mb-32">
           <div className="bg-white p-12 rounded-[3rem] border border-gray-100 shadow-xl relative overflow-hidden">
@@ -308,15 +326,30 @@ export function StrategyRoadmap() {
         </section>
 
         {/* Final CTA */}
-        <section className="text-center py-20 bg-indigo-600 rounded-[3rem] text-white">
-          <h2 className="text-4xl font-black mb-6">Let's build the future of immunotherapy safety together.</h2>
-          <div className="flex justify-center gap-4">
-            <Link 
-              to="/" 
-              className="px-8 py-4 bg-white text-indigo-600 rounded-xl font-bold hover:bg-indigo-50 transition-all flex items-center gap-2"
-            >
-              Review Platform <ArrowRight className="w-5 h-5" />
-            </Link>
+        <section className="text-center py-24 bg-indigo-600 rounded-[3rem] text-white relative overflow-hidden group">
+          <div className="absolute inset-0 bg-grid opacity-10" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl group-hover:scale-110 transition-transform duration-700" />
+          
+          <div className="relative z-10 max-w-4xl mx-auto px-4">
+            <h2 className="text-4xl font-black mb-8 tracking-tight">Ready to de-risk your oncology pipeline?</h2>
+            <p className="text-xl text-indigo-100 mb-12 leading-relaxed">
+              Join our structured 12-week Pilot Program to validate ImmunoSentry's mechanistic simulations on your proprietary cohorts. 
+              Secure your competitive edge in the next generation of immunotherapy safety.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <a 
+                href="mailto:harikayadavlakshmi@gmail.com?subject=ImmunoSentry Pilot Initiation"
+                className="px-10 py-5 bg-white text-indigo-600 rounded-2xl font-bold hover:bg-indigo-50 transition-all flex items-center gap-3 shadow-2xl shadow-indigo-900/20 text-lg"
+              >
+                Initiate Pilot Discussion <ArrowRight className="w-6 h-6" />
+              </a>
+              <Link 
+                to="/" 
+                className="px-10 py-5 bg-indigo-500 text-white rounded-2xl font-bold hover:bg-indigo-400 transition-all flex items-center gap-3 border border-indigo-400 text-lg"
+              >
+                Review Platform <Zap className="w-6 h-6" />
+              </Link>
+            </div>
           </div>
         </section>
       </main>

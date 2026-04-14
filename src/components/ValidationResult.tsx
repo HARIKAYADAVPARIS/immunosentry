@@ -94,19 +94,20 @@ export function ValidationResult() {
               Real-World <span className="text-indigo-600">Dataset</span> Verification.
             </h3>
             <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-              We benchmarked ImmunoSentry against public clinical datasets from the TCGA-SKCM cohort and cBioPortal MSK-IMPACT trials, informed by ESMO TAT 2025 research.
+              We benchmarked ImmunoSentry against public clinical datasets from the TCGA-SKCM cohort, cBioPortal MSK-IMPACT, and the **GeRI Cohort (n=1,302)**, informed by ESMO TAT 2025 research.
             </p>
           </div>
           
           {/* Real AUC Metric Card */}
-          <div className="bg-indigo-50 p-6 rounded-2xl border border-indigo-100 flex items-center gap-6">
-            <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-100">
+          <div className="bg-indigo-50 p-6 rounded-2xl border border-indigo-100 flex items-center gap-6 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-grid opacity-10" />
+            <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-100 relative z-10">
               <BarChart3 className="w-6 h-6" />
             </div>
-            <div>
+            <div className="relative z-10">
               <div className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">Benchmark AUC (cBioPortal)</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-black text-indigo-900">{PERFORMANCE_METRICS.auc}</span>
+                <span className="text-3xl font-black text-indigo-900 font-mono">{PERFORMANCE_METRICS.auc}</span>
                 <span className="text-sm font-bold text-emerald-600 flex items-center gap-0.5">
                   <Target className="w-3 h-3" /> Retrospective Benchmark
                 </span>
@@ -117,34 +118,38 @@ export function ValidationResult() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Case Card */}
-          <div className="lg:col-span-1 bg-gray-50/50 p-8 rounded-3xl border border-gray-100">
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-3 text-gray-900 font-bold">
-                <FileText className="w-5 h-5 text-indigo-600" /> Case ID: {VALIDATION_CASE.id}
+          <div className="lg:col-span-1 bg-gray-50/50 p-8 rounded-3xl border border-gray-100 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-grid opacity-5" />
+            <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/0 via-indigo-500/5 to-indigo-500/0 h-1/2 w-full animate-scan pointer-events-none" />
+            
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-3 text-gray-900 font-bold font-mono text-sm">
+                  <FileText className="w-5 h-5 text-indigo-600" /> Case ID: {VALIDATION_CASE.id}
+                </div>
+                <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-[10px] font-bold rounded-full uppercase">
+                  Verified Case
+                </span>
               </div>
-              <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-[10px] font-bold rounded-full uppercase">
-                Verified Case
-              </span>
-            </div>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Cohort</span>
-                <span className="font-medium text-gray-900">{VALIDATION_CASE.source}</span>
+              <div className="space-y-4 mb-8">
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-500">Cohort</span>
+                  <span className="font-medium text-gray-900">{VALIDATION_CASE.source}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-500">Therapy</span>
+                  <span className="font-medium text-gray-900">{VALIDATION_CASE.drug}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-500">Biomarkers</span>
+                  <span className="font-medium text-indigo-600 font-mono">{VALIDATION_CASE.hlaAlleles.join(", ")}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-500">Microbiome</span>
+                  <span className="font-medium text-red-600 font-mono">Low Faecalibacterium ({VALIDATION_CASE.microbiome.faecalibacterium}%)</span>
+                </div>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Therapy</span>
-                <span className="font-medium text-gray-900">{VALIDATION_CASE.drug}</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Biomarkers</span>
-                <span className="font-medium text-indigo-600">{VALIDATION_CASE.hlaAlleles.join(", ")}</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Microbiome</span>
-                <span className="font-medium text-red-600">Low Faecalibacterium ({VALIDATION_CASE.microbiome.faecalibacterium}%)</span>
-              </div>
-            </div>
 
             <div className="p-4 bg-white rounded-2xl border border-gray-200 mb-8">
               <div className="text-xs font-bold text-gray-400 uppercase mb-2">Ground Truth Outcome</div>
@@ -176,8 +181,9 @@ export function ValidationResult() {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* AI Result Card */}
+        {/* AI Result Card */}
           <div className="lg:col-span-2 relative">
             <AnimatePresence mode="wait">
               {error && (

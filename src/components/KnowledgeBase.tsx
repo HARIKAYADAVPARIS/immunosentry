@@ -20,8 +20,14 @@ const BIOMARKERS = [
     evidence: "ESMO TAT 2025 (Abstracts 3P/4P) consolidated the role of AI in informing clinical decision-making for ICIs."
   },
   {
-    title: "Explainable AI (XAI)",
+    title: "Genetic Predisposition (PRSAD)",
     icon: <ShieldCheck className="w-6 h-6 text-indigo-600" />,
+    description: "Polygenic Risk Scores for Autoimmune Disease (PRSAD) identify patients with high germline susceptibility to early ICI discontinuation (within 90 days), particularly in combination therapies.",
+    evidence: "The GeRI Cohort study (n=1,302, NSCLC) identified a 4.8x higher discontinuation rate in the top quintile of PRSAD risk."
+  },
+  {
+    title: "Explainable AI (XAI)",
+    icon: <BookOpen className="w-6 h-6 text-indigo-600" />,
     description: "Healthcare adoption requires 'Glass Box' models. ImmunoSentry provides an Evidence Trace for every prediction, mapping patient data directly to clinical citations.",
     evidence: "The WHO Guidance on AI for Health (2021) emphasizes transparency and explainability as core ethical principles."
   }

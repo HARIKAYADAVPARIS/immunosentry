@@ -10,12 +10,12 @@ import { Link } from "react-router-dom";
 
 export function Home() {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-indigo-100 selection:text-indigo-900 antialiased">
+    <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-indigo-100 selection:text-indigo-900 antialiased bg-grid">
       <Header />
       
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-24 overflow-hidden bg-white">
+        <section className="relative pt-32 pb-24 overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
             <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-50 rounded-full blur-3xl opacity-50 -mr-48 -mt-48" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-50 rounded-full blur-3xl opacity-50 -ml-48 -mb-48" />
@@ -30,35 +30,57 @@ export function Home() {
                   transition={{ duration: 0.6 }}
                 >
                   <div className="flex flex-wrap items-center gap-4 mb-6">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider">
-                      <img src="/logo.svg" alt="Logo" className="w-4 h-4" referrerPolicy="no-referrer" /> Based on ESMO TAT 2025 Abstracts 3P/4P
-                    </div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider border border-emerald-100">
+                    <motion.div 
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.1 }}
+                      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider border border-indigo-100 shadow-sm"
+                    >
+                      <img src="/logo.svg" alt="Logo" className="w-4 h-4 animate-pulse" referrerPolicy="no-referrer" /> Based on ESMO TAT 2025 Abstracts 3P/4P
+                    </motion.div>
+                    <motion.div 
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider border border-emerald-100 shadow-sm"
+                    >
                       <ShieldCheck className="w-3 h-3" /> Retrospective Benchmark · AUC 0.84 · n=1,662 patients · cBioPortal (Cerami et al. 2012)
-                    </div>
+                    </motion.div>
                   </div>
-                  <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight sm:text-7xl mb-8 text-balance">
+                  <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight sm:text-7xl mb-8 text-balance font-display">
                     Predicting <span className="text-indigo-600">irAEs</span> & Survival Outcomes.
                   </h1>
                   <p className="text-xl text-gray-500 leading-relaxed mb-4 text-balance">
                     ImmunoSentry leverages ESMO TAT 2025 clinical data, genetic HLA alleles, and gut microbial abundance to provide <span className="text-indigo-600 font-bold">Trial Rescue Audits</span> and <span className="text-indigo-600 font-bold">Research Interpretation</span> for global oncology pipelines.
                   </p>
-                  <p className="text-lg text-indigo-600 font-medium mb-12 max-w-2xl">
+                  <p className="text-lg text-indigo-600 font-medium mb-12 max-w-2xl border-l-2 border-indigo-100 pl-6 py-2">
                     The only platform combining HLA genetics, gut microbiome signatures, and a deterministic cytokine cascade simulator for steroid timing simulation in ICI therapy — built for pharma R&D.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <a 
+                    <motion.a 
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                       href="#assessment" 
                       className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all flex items-center gap-2 shadow-lg shadow-indigo-200"
                     >
                       Start Assessment <ArrowRight className="w-5 h-5" />
-                    </a>
-                    <a 
+                    </motion.a>
+                    <motion.a 
+                      whileHover={{ scale: 1.02, backgroundColor: "rgba(249, 250, 251, 1)" }}
+                      whileTap={{ scale: 0.98 }}
                       href="#overview" 
                       className="px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center gap-2"
                     >
                       Platform Overview <ChevronDown className="w-5 h-5" />
-                    </a>
+                    </motion.a>
+                    <motion.a 
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      href="mailto:harikayadavlakshmi@gmail.com?subject=Technical Audit Request"
+                      className="px-8 py-4 bg-indigo-50 text-indigo-600 rounded-xl font-bold hover:bg-indigo-100 transition-all flex items-center gap-2 border border-indigo-100"
+                    >
+                      Schedule Technical Audit <ArrowRight className="w-5 h-5" />
+                    </motion.a>
                   </div>
                 </motion.div>
               </div>
