@@ -131,7 +131,7 @@ export function Legal() {
             <span>HIPAA-Aware Architecture</span>
           </div>
           <p className="text-xs text-gray-400 uppercase font-bold tracking-widest">
-            © 2026 ImmunoSentry SAS · ESMO 2025 · All Rights Reserved
+            © 2026 ImmunoSentry SAS · All Rights Reserved
           </p>
         </div>
       </footer>

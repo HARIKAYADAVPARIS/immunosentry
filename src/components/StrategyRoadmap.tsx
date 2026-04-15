@@ -396,7 +396,7 @@ export function StrategyRoadmap() {
             This document contains proprietary strategic information for ImmunoSentry SAS.
           </p>
           <p className="text-[10px] text-gray-400 mt-4">
-            © 2026 ImmunoSentry SAS · ESMO 2025 · <Link to="/legal" className="hover:underline">Legal</Link>
+            © 2026 ImmunoSentry SAS · <Link to="/legal" className="hover:underline">Legal</Link>
           </p>
         </div>
       </footer>

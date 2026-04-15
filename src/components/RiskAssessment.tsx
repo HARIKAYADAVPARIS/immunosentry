@@ -121,9 +121,6 @@ export function RiskAssessment() {
     <section id="assessment" className="py-24 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
-            <Database className="w-3 h-3" /> Based on ESMO TAT 2025 Abstracts 3P/4P
-          </div>
           <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-6xl font-display">
             Predictive <span className="text-indigo-600">Biomarker Analysis</span>.
           </h3>

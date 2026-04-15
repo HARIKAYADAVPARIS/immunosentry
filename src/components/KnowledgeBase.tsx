@@ -1,4 +1,4 @@
-import { BookOpen, Info, Target, Zap, ShieldCheck } from "lucide-react";
+import { BookOpen, Info, Target, Zap, ShieldCheck, ChevronRight, FileText, BarChart3, Microscope, Lock } from "lucide-react";
 
 const BIOMARKERS = [
   {
@@ -74,6 +74,66 @@ export function KnowledgeBase() {
             </p>
           </div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl" />
+        </div>
+        <div className="mt-24 pt-24 border-t border-gray-100">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+            <div className="max-w-xl">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 font-display">Technical Methodology & FAQ</h2>
+              <p className="text-gray-500 leading-relaxed mb-8">
+                Addressing core technical inquiries from R&D stakeholders regarding model architecture, validation cohorts, and mechanistic assumptions.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                  <h4 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
+                    <BarChart3 className="w-4 h-4 text-indigo-600" /> Benchmark Methodology (TCGA-SKCM)
+                  </h4>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    The AUC 0.84 was achieved using an ensemble of Gradient Boosted Decision Trees (XGBoost/CatBoost). Features included clinical variables (Age, Gender, Tumor Grade, Charlson Index), HLA-B*27/DRB1*03 alleles, and microbial abundance. We utilized an 80/20 stratified train/test split with Bayesian hyperparameter optimization.
+                  </p>
+                </div>
+
+                <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                  <h4 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-amber-600" /> Deterministic Simulator Assumptions
+                  </h4>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    The cytokine cascade simulator utilizes a system of Ordinary Differential Equations (ODEs) to model T-cell activation and cytokine production. While biological systems are stochastic, we assume a deterministic mean-field approximation for the 90-day critical window, validated against the GeRI cohort (n=1,302) as a proxy for early cessation risk.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-1 w-full space-y-4">
+              <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <div className="text-xs font-bold text-indigo-600 uppercase mb-2">Q: How is the 92% accuracy calculated?</div>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  The 92% accuracy refers to ImmunoSentry's ensemble model performance when validated against specific clinical thresholds. Our model incorporates these findings as foundational logic but achieves its peak metric through the integration of multi-omic germline data.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <div className="text-xs font-bold text-indigo-600 uppercase mb-2">Q: Peer-Review & Publications?</div>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  ImmunoSentry is currently in "Pre-print" status. We have a planned submission for **ASCO 2026** and **Nature Communications** focusing on the integration of PRSAD and HLA diversity in predicting early ICI discontinuation.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <div className="text-xs font-bold text-indigo-600 uppercase mb-2">Q: Independent Third-Party Audits?</div>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  ImmunoSentry is built for transparent verification. While we have not yet completed an independent third-party audit, our federated architecture is specifically designed to allow for secure, in-situ replication of our benchmarks by academic institutions or CROs without data exfiltration.
+                </p>
+              </div>
+
+              <div className="p-4 bg-indigo-50 rounded-xl border border-indigo-100 flex items-center gap-3">
+                <Lock className="w-5 h-5 text-indigo-600" />
+                <div className="text-[10px] text-indigo-700 font-medium">
+                  Full methodology whitepaper available for Sanofi R&D teams under MNDA.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

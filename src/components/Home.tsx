@@ -29,32 +29,14 @@ export function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="flex flex-wrap items-center gap-4 mb-6">
-                    <motion.div 
-                      initial={{ scale: 0.9, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 0.1 }}
-                      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider border border-indigo-100 shadow-sm"
-                    >
-                      <img src="/logo.svg" alt="Logo" className="w-4 h-4 animate-pulse" referrerPolicy="no-referrer" /> Based on ESMO TAT 2025 Abstracts 3P/4P
-                    </motion.div>
-                    <motion.div 
-                      initial={{ scale: 0.9, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 0.2 }}
-                      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider border border-emerald-100 shadow-sm"
-                    >
-                      <ShieldCheck className="w-3 h-3" /> Retrospective Benchmark · AUC 0.84 · n=1,662 patients · cBioPortal (Cerami et al. 2012)
-                    </motion.div>
-                  </div>
-                  <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight sm:text-7xl mb-8 text-balance font-display">
-                    Predicting <span className="text-indigo-600">irAEs</span> & Survival Outcomes.
+                  <h1 className="text-6xl font-black text-gray-900 tracking-tight sm:text-8xl mb-8 text-balance font-display leading-[1.1]">
+                    Predicting <span className="text-indigo-600">irAEs</span> <br className="hidden sm:block" /> & Survival Outcomes.
                   </h1>
-                  <p className="text-xl text-gray-500 leading-relaxed mb-4 text-balance">
-                    ImmunoSentry leverages ESMO TAT 2025 clinical data, genetic HLA alleles, and gut microbial abundance to provide <span className="text-indigo-600 font-bold">Trial Rescue Audits</span> and <span className="text-indigo-600 font-bold">Research Interpretation</span> for global oncology pipelines.
+                  <p className="text-xl text-gray-500 leading-relaxed mb-6 text-balance max-w-2xl">
+                    ImmunoSentry leverages ESMO TAT 2025 clinical data, genetic HLA alleles, and gut microbial abundance to provide <span className="text-indigo-600 font-bold">Trial Rescue Audits</span> for global oncology pipelines.
                   </p>
                   <p className="text-lg text-indigo-600 font-medium mb-12 max-w-2xl border-l-2 border-indigo-100 pl-6 py-2">
-                    The only platform combining HLA genetics, gut microbiome signatures, and a deterministic cytokine cascade simulator for steroid timing simulation in ICI therapy — built for pharma R&D.
+                    The only platform combining HLA genetics and gut microbiome signatures for steroid timing simulation in ICI therapy — built for pharma R&D.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <motion.a 
@@ -388,7 +370,7 @@ export function Home() {
           <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-col gap-2">
               <p className="text-xs text-gray-400">
-                © 2026 ImmunoSentry SAS · Based on Nature Communications (2022) 13:392 and ESMO TAT 2025 Abstracts 3P/4P · Research use only
+                © 2026 ImmunoSentry SAS · Based on Nature Communications (2022) 13:392 · Research use only
               </p>
               <div className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">
                 Research tool only · Not a medical device · Not CE marked · Not FDA cleared · GDPR Principles Applied · HIPAA-Aware Architecture · <Link to="/privacy" className="hover:text-indigo-600 transition-colors underline">Privacy Policy</Link>

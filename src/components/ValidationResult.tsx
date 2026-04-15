@@ -85,11 +85,8 @@ export function ValidationResult() {
   return (
     <section id="validation" className="py-32 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div className="mb-16 flex flex-col md:grid md:grid-cols-2 items-end justify-between gap-8">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
-              <Database className="w-3 h-3" /> Based on ESMO TAT 2025 Abstracts 3P/4P
-            </div>
             <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-6xl font-display">
               Real-World <span className="text-indigo-600">Dataset</span> Verification.
             </h3>
