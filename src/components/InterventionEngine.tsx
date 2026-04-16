@@ -107,7 +107,7 @@ Early steroid simulation on Day ${steroidDay} is projected to mitigate
 the cytokine cascade and reduce pneumonitis risk by ${reduction}%.
 Monitor IL-6 levels closely between Day 3 and Day 7.
 
-Based on ESMO TAT 2025 Abstracts 3P/4P.
+Informed by clinical findings from ESMO TAT 2025.
 `;
     const blob = new Blob([reportText], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
@@ -163,13 +163,13 @@ async def process_trial(file: UploadFile):
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
-            <ShieldCheck className="w-3 h-3" /> Based on ESMO TAT 2025 Abstracts 3P/4P
+            <ShieldCheck className="w-3 h-3" /> Informed by clinical findings from ESMO TAT 2025
           </div>
           <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-6xl font-display">
             Steroid <span className="text-indigo-600">Timing</span> Simulation.
           </h3>
           <p className="mt-6 text-xl text-gray-500 max-w-3xl leading-relaxed">
-            Deterministic biological simulation of steroid timing based on cytokine cascade kinetics — benchmarked against thresholds from ESMO TAT 2025 Abstracts 3P/4P.
+            Deterministic biological simulation of steroid timing based on cytokine cascade kinetics — benchmarked against clinical research findings from ESMO TAT 2025.
           </p>
         </div>
 
@@ -366,7 +366,7 @@ async def process_trial(file: UploadFile):
                       <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
                         <div className="text-xs font-bold text-emerald-400 uppercase mb-2">Simulation Impact</div>
                         <div className="text-lg font-bold">Steroid Day {steroidDay} → {reduction}% Risk Reduction</div>
-                        <p className="text-[10px] text-gray-500 mt-2 italic">*Based on ESMO TAT 2025 Abstracts 3P/4P</p>
+                        <p className="text-[10px] text-gray-500 mt-2 italic">*Informed by clinical findings from ESMO TAT 2025</p>
                       </div>
 
                       <div className="grid grid-cols-1 gap-3">

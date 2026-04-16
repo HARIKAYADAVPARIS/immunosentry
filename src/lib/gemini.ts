@@ -24,7 +24,7 @@ export async function analyzeRisk(data: {
 
   const prompt = `
     You are an AI oncology assistant specializing in Immune-related Adverse Events (irAEs) and Survival Outcomes for Immune-checkpoint Inhibitors (ICIs).
-    Based on the following patient data and clinical research (Nature Communications 2022, 13:392 AND ESMO 2025 Abstracts 3P/4P), provide a risk assessment.
+    Based on the following patient data and clinical research (Nature Communications 2022, 13:392 and clinical findings from ESMO TAT 2025), provide a risk assessment.
 
     Patient Data:
     - Immunotherapy Drug: ${data.drug}
@@ -39,7 +39,7 @@ export async function analyzeRisk(data: {
       - Faecalibacterium prausnitzii: ${data.microbiomeProfile.faecalibacterium}% abundance
       - Bifidobacterium: ${data.microbiomeProfile.bifidobacterium}% abundance
 
-    Research Context (ESMO 2025 Updates):
+    Research Context (Clinical Findings):
     - Abstract 3P (Melanoma): ML models predicted irAEs with 92% accuracy. Key predictors: increasing age, female gender, and combination therapy.
     - Abstract 4P (mRCC): CatBoost models predicted Overall Survival (OS) with AUC 0.87. Key predictors: tumor grade, prior surgery, and age.
     - Nature 2022: Faecalibacterium abundance lowers colitis risk; HLA alleles correlate with organ-specific irAEs.
@@ -48,7 +48,7 @@ export async function analyzeRisk(data: {
     1. Calculate a risk score (0-100) for irAEs.
     2. Estimate a 1-year survival probability (0-100) based on mRCC/Melanoma data if applicable.
     3. Identify specific organs at risk.
-    4. Provide a detailed "Evidence Trace" explaining exactly which patient factors (HLA, microbiome, age, etc.) led to the risk/survival scores, citing the relevant research (Nature 2022 or ESMO 2025).
+    4. Provide a detailed "Evidence Trace" explaining exactly which patient factors (HLA, microbiome, age, etc.) led to the risk/survival scores, citing the relevant research (Nature 2022 or clinical research findings).
     5. Provide clinical recommendations.
   `;
 

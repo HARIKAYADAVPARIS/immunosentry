@@ -91,7 +91,7 @@ export function ValidationResult() {
               Real-World <span className="text-indigo-600">Dataset</span> Verification.
             </h3>
             <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-              We benchmarked ImmunoSentry against public clinical datasets from the TCGA-SKCM cohort, cBioPortal MSK-IMPACT, and the **GeRI Cohort (n=1,302)**, informed by ESMO TAT 2025 research.
+              We benchmarked ImmunoSentry against public clinical datasets from the TCGA-SKCM cohort, cBioPortal MSK-IMPACT, and the **GeRI Cohort (n=1,302)**, informed by published clinical research findings.
             </p>
           </div>
           
@@ -217,7 +217,7 @@ export function ValidationResult() {
               <div className="h-full flex flex-col items-center justify-center text-center p-12 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm">
                 <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mb-6" />
                 <h4 className="text-xl font-bold text-gray-900">Processing Clinical Data</h4>
-                <p className="text-sm text-gray-500 mt-2 max-w-xs">Correlating TCGA genomic signatures with ESMO 2025 predictive weights...</p>
+                <p className="text-sm text-gray-500 mt-2 max-w-xs">Correlating TCGA genomic signatures with research-aligned predictive weights...</p>
               </div>
             )}
 
@@ -376,7 +376,7 @@ export function ValidationResult() {
               "Consistent performance across tumor types and ICI regimens demonstrates generalizability of the ImmunoSentry framework."
             </p>
             <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-              Data: cBioPortal (Cerami et al. 2012); Benchmarking methodology: ESMO TAT 2025
+              Data: cBioPortal (Cerami et al. 2012); Benchmarking methodology: Published clinical findings
             </div>
           </div>
         </div>

@@ -127,7 +127,7 @@ export function StrategyRoadmap() {
               {
                 name: "Harika Yadav",
                 role: "Chief Scientific Officer",
-                desc: "Specialist in clinical pharmacology and immuno-oncology research. Harvard HMX Immuno-oncology certified. Leading the mechanistic biological modeling and ESMO TAT 2025 alignment frameworks.",
+                desc: "Specialist in clinical pharmacology and immuno-oncology research. Harvard HMX Immuno-oncology certified. Leading the mechanistic biological modeling and clinical research alignment frameworks.",
                 icon: <Microscope className="w-6 h-6" />
               },
               {

@@ -33,7 +33,7 @@ export function Home() {
                     Predicting <span className="text-indigo-600">irAEs</span> <br className="hidden sm:block" /> & Survival Outcomes.
                   </h1>
                   <p className="text-xl text-gray-500 leading-relaxed mb-6 text-balance max-w-2xl">
-                    ImmunoSentry leverages ESMO TAT 2025 clinical data, genetic HLA alleles, and gut microbial abundance to provide <span className="text-indigo-600 font-bold">Trial Rescue Audits</span> for global oncology pipelines.
+                    ImmunoSentry is informed by clinical findings from ESMO TAT 2025, genetic HLA alleles, and gut microbial abundance to provide <span className="text-indigo-600 font-bold">Trial Rescue Audits</span> for global oncology pipelines.
                   </p>
                   <p className="text-lg text-indigo-600 font-medium mb-12 max-w-2xl border-l-2 border-indigo-100 pl-6 py-2">
                     The only platform combining HLA genetics and gut microbiome signatures for steroid timing simulation in ICI therapy — built for pharma R&D.
@@ -106,7 +106,7 @@ export function Home() {
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">Cytokine Cascade Simulator</h3>
                     <p className="text-indigo-200 text-sm leading-relaxed">
-                      Deterministic biological simulation for steroid timing simulation — the only mechanistic irAE engine benchmarked against thresholds from ESMO TAT 2025 Abstracts 3P/4P.
+                      Deterministic biological simulation for steroid timing simulation — the only mechanistic irAE engine benchmarked against clinical research findings from ESMO TAT 2025.
                     </p>
                   </div>
                   <a 
@@ -182,7 +182,7 @@ export function Home() {
                 },
                 { 
                   title: "Knowledge Base", 
-                  desc: "Clinical evidence mapping to ESMO 2025 and Nature research.",
+                  desc: "Clinical evidence mapping to published clinical findings and Nature research.",
                   link: "/knowledge",
                   isExternal: true,
                   icon: <Microscope className="w-6 h-6" />
@@ -266,7 +266,7 @@ export function Home() {
                     },
                     { 
                       title: "Regulatory Alignment", 
-                      desc: "Designed in reference to WHO Guidance on AI for Health (2021) and ESMO TAT 2025 research",
+                      desc: "Designed in reference to WHO Guidance on AI for Health (2021) and published clinical research",
                       icon: <Activity className="w-5 h-5 text-indigo-600" />
                     },
                     { 
@@ -370,7 +370,7 @@ export function Home() {
           <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-col gap-2">
               <p className="text-xs text-gray-400">
-                © 2026 ImmunoSentry SAS · Based on Nature Communications (2022) 13:392 · Research use only
+                © 2026 ImmunoSentry SAS · Research use only
               </p>
               <div className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">
                 Research tool only · Not a medical device · Not CE marked · Not FDA cleared · GDPR Principles Applied · HIPAA-Aware Architecture · <Link to="/privacy" className="hover:text-indigo-600 transition-colors underline">Privacy Policy</Link>

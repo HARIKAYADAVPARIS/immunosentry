@@ -125,7 +125,7 @@ export function RiskAssessment() {
             Predictive <span className="text-indigo-600">Biomarker Analysis</span>.
           </h3>
           <p className="mt-6 text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Enter patient clinical and genetic data to generate a high-fidelity risk profile for immunotherapy toxicity based on the latest ESMO 2025 research.
+            Enter patient clinical and genetic data to generate a high-fidelity risk profile for immunotherapy toxicity informed by the latest clinical research findings.
           </p>
         </div>
 
@@ -462,7 +462,7 @@ export function RiskAssessment() {
 
                   <div className="flex items-center justify-between pt-6 border-t border-white/10">
                     <div className="flex items-center gap-2 text-[10px] font-bold text-indigo-400 uppercase tracking-widest">
-                      <ShieldCheck className="w-4 h-4" /> ESMO 2025 Aligned
+                      <ShieldCheck className="w-4 h-4" /> Research Aligned
                     </div>
                     <button 
                       onClick={() => setResult(null)}

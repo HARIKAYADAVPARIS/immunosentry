@@ -11,13 +11,13 @@ const BIOMARKERS = [
     title: "Gut Microbiome",
     icon: <Zap className="w-6 h-6 text-amber-600" />,
     description: "The abundance of anti-inflammatory species like Faecalibacterium prausnitzii promotes regulatory T-cell sequestration, potentially mitigating intestinal inflammation.",
-    evidence: "Routy et al. (2018) demonstrated that gut microbial composition influences both anti-tumor response and irAE severity."
+    evidence: "Routy et al. (2018) and Nature Communications (2022) 13:392 demonstrated that gut microbial composition influences both anti-tumor response and irAE severity."
   },
   {
-    title: "Clinical Predictors (ESMO 2025)",
+    title: "Clinical Predictors (Research Aligned)",
     icon: <Info className="w-6 h-6 text-emerald-600" />,
     description: "Machine learning models (CatBoost, Ensemble) now integrate age, gender, tumor grade, and surgical history to predict irAEs with 92% accuracy and survival with 0.87 AUC.",
-    evidence: "ESMO TAT 2025 (Abstracts 3P/4P) consolidated the role of AI in informing clinical decision-making for ICIs."
+    evidence: "Published clinical research has consolidated the role of AI in informing clinical decision-making for ICIs."
   },
   {
     title: "Genetic Predisposition (PRSAD)",

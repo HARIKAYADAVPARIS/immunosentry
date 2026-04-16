@@ -113,13 +113,13 @@ export function RealWorldValidation() {
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
-              <Database className="w-3 h-3" /> Based on ESMO TAT 2025 Abstracts 3P/4P
+              <Database className="w-3 h-3" /> Informed by clinical findings from ESMO TAT 2025
             </div>
             <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-6xl font-display">
               Clinical <span className="text-indigo-600">Benchmark</span> Engine.
             </h3>
             <p className="mt-6 text-xl text-gray-500 leading-relaxed">
-              Directly benchmark ImmunoSentry's predictive engine against real patient cohorts from cBioPortal, benchmarked against thresholds from ESMO TAT 2025 Abstracts 3P/4P.
+              Directly benchmark ImmunoSentry's predictive engine against real patient cohorts from cBioPortal, benchmarked against clinical research findings from ESMO TAT 2025.
             </p>
           </div>
           

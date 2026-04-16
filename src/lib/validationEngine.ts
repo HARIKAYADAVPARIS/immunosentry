@@ -17,7 +17,7 @@ export interface ValidationMetrics {
 }
 
 /**
- * Heuristic prediction model based on ESMO 2025 and Nature 2022 research.
+ * Heuristic prediction model informed by clinical research findings and Nature 2022 research.
  * Mimics the AI logic for large-scale validation.
  */
 export function predictRiskScore(patient: any): number {
@@ -31,16 +31,16 @@ export function predictRiskScore(patient: any): number {
     score += 15;
   }
 
-  // Age impact (ESMO 2025: increasing age)
+  // Age impact (Research findings: increasing age)
   const age = parseInt(patient.AGE || patient.AGE_AT_DIAGNOSIS || "50");
   if (age > 70) score += 15;
   else if (age > 60) score += 10;
 
-  // Gender impact (ESMO 2025: female)
+  // Gender impact (Research findings: female)
   const sex = (patient.SEX || patient.GENDER || "").toLowerCase();
   if (sex === "female") score += 10;
 
-  // Tumor grade (ESMO 2025: high grade)
+  // Tumor grade (Research findings: high grade)
   const grade = (patient.TUMOR_GRADE || "").toLowerCase();
   if (grade.includes("3") || grade.includes("4") || grade.includes("high")) {
     score += 15;
