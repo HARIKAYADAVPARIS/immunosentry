@@ -1,0 +1,5 @@
+{
+  "name": "ImmunoSentry: irAE Predictive Tool",
+  "description": "An AI-powered dashboard for predicting and monitoring immune-related adverse events (irAEs) using genetic and microbial biomarkers based on recent clinical research.",
+  "requestFramePermissions": []
+}

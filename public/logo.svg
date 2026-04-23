@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1100 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGrad" x1="120" y1="80" x2="120" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="100%" stop-color="#0D9488" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon Group -->
+  <g transform="translate(40, 0)">
+    <!-- Shield Background -->
+    <path d="M150 340C150 340 280 280 280 150V70L150 30L20 70V150C20 280 150 340 150 340Z" fill="url(#shieldGrad)" />
+    
+    <!-- Antibody (Stylized Y) -->
+    <path d="M150 200V280M150 200L100 120M150 200L200 120" stroke="white" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" opacity="0.95" />
+    <path d="M100 120L80 90M200 120L220 90" stroke="white" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
+    
+    <!-- Molecules -->
+    <circle cx="280" cy="80" r="12" fill="#2DD4BF" />
+    <circle cx="320" cy="110" r="16" fill="#1E40AF" />
+    <circle cx="340" cy="60" r="8" fill="#2DD4BF" />
+    <line x1="280" y1="80" x2="320" y2="110" stroke="#2DD4BF" stroke-width="4" />
+    <line x1="320" y1="110" x2="340" y2="60" stroke="#2DD4BF" stroke-width="4" />
+    <circle cx="240" cy="40" r="5" fill="#2DD4BF" />
+    <path d="M50 300L60 300M55 295L55 305" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" />
+    <path d="M260 220L270 220M265 215L265 225" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" />
+    <circle cx="40" cy="120" r="4" fill="#2DD4BF" />
+  </g>
+  
+  <!-- Branded Text -->
+  <text x="400" y="225" fill="#111827" style="font: bold 72px Inter, sans-serif; letter-spacing: -2px;">Immuno<tspan fill="#4F46E5">Sentry</tspan></text>
+</svg>

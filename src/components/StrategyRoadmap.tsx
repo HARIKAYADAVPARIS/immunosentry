@@ -1,0 +1,550 @@
+import { motion } from "motion/react";
+import { 
+  ShieldCheck, 
+  Target, 
+  Map, 
+  Lock, 
+  Users, 
+  Globe, 
+  Scale, 
+  Zap, 
+  ArrowLeft,
+  ArrowRight,
+  Database,
+  Search,
+  Cpu,
+  Microscope,
+  Linkedin,
+  Twitter,
+  Github,
+  Instagram,
+  TrendingUp,
+  BarChart,
+  Briefcase,
+  Clock,
+  Layout
+} from "lucide-react";
+import { Link } from "react-router-dom";
+
+export function StrategyRoadmap() {
+  return (
+    <div className="min-h-screen bg-white font-sans text-gray-900">
+      {/* Navigation */}
+      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            <div className="flex items-center gap-3">
+              <img src="/logo.svg" alt="ImmunoSentry Logo" className="h-10 w-auto" referrerPolicy="no-referrer" />
+            </div>
+            <Link 
+              to="/" 
+              className="text-sm font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-2 px-6 py-3 bg-indigo-50 rounded-2xl transition-all"
+            >
+              <ArrowLeft className="w-4 h-4" /> Back to Platform
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* Hero Section */}
+        <div className="max-w-3xl mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
+              <ShieldCheck className="w-3 h-3" /> Founder's Strategic Vision
+            </div>
+            <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight sm:text-6xl mb-6">
+              The Path to <span className="text-indigo-600">Dominance</span>.
+            </h1>
+            <p className="text-xl text-gray-500 leading-relaxed">
+              ImmunoSentry is not just a predictive tool; it is the infrastructure for the next generation of safe, effective immunotherapy. Here is how we build a defensible, scalable enterprise.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Market Opportunity Section */}
+        <section className="mb-32">
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center justify-center gap-2 font-display">
+              <TrendingUp className="w-4 h-4" /> Market Density & Opportunity
+            </h2>
+            <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl font-display">
+              The Cost of <span className="text-indigo-600">Failure</span>.
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-10 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm text-center">
+              <div className="text-5xl font-black text-red-500 mb-4">$2.6B</div>
+              <div className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-4">Cost of Trial Failure</div>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Average out-of-pocket cost for a single Phase III oncology trial failure due to unforeseen toxicity.
+              </p>
+            </div>
+            <div className="p-10 bg-indigo-600 rounded-[2.5rem] shadow-xl text-center text-white">
+              <div className="text-5xl font-black mb-4">$44B</div>
+              <div className="text-sm font-bold text-indigo-100 uppercase tracking-widest mb-4">Immuno-Oncology TAM</div>
+              <p className="text-sm text-indigo-100 leading-relaxed">
+                Total addressable market for IO therapeutics by 2027, growing at a 14% CAGR.
+              </p>
+            </div>
+            <div className="p-10 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm text-center">
+              <div className="text-5xl font-black text-indigo-600 mb-4">40%+</div>
+              <div className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-4">Treatment Discontinuation</div>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Percentage of patients who discontinue immunotherapy due to severe toxicity events known as <strong>irAEs</strong>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* The "Why Now" Section */}
+        <section className="mb-32">
+          <div className="p-12 bg-gray-900 rounded-[3rem] text-white relative overflow-hidden">
+            <div className="relative z-10 max-w-4xl">
+              <h2 className="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-6 flex items-center gap-2 font-display">
+                <Clock className="w-4 h-4" /> The Convergence: Why Now?
+              </h2>
+              <h3 className="text-4xl font-bold mb-8 font-display">Technology <span className="text-indigo-500">Convergence</span>.</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                  <h4 className="text-lg font-bold text-indigo-300 mb-4 flex items-center gap-2">
+                    <Database className="w-5 h-5" /> HLA Diversity Data
+                  </h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Until 2024, ethnic diversity in genomic archives was insufficient to train population-aware toxicity models. We are now at the "Bio-Data Inflection" point.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-indigo-300 mb-4 flex items-center gap-2">
+                    <Cpu className="w-5 h-5" /> Privacy-First ML
+                  </h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Federated Learning protocols have finally matured to enterprise Grade A, allowing IO R&D leads to collaborate without compromising proprietary IP or GDPR compliance.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full -mr-48 -mt-48 blur-3xl" />
+          </div>
+        </section>
+
+        {/* What We Do Section */}
+        <section className="mb-32">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center gap-2 font-display">
+                <Zap className="w-4 h-4" /> What We Do
+              </h2>
+              <h3 className="text-3xl font-bold text-gray-900 font-display">
+                Engineering <span className="text-indigo-600">Clinical Success</span>.
+              </h3>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-10 bg-white rounded-[3rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all group relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full -mr-32 -mt-32 blur-3xl opacity-50 group-hover:scale-110 transition-transform duration-700" />
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-indigo-100">
+                    <Target className="w-7 h-7" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 font-display">Trial Design & Stratification</h4>
+                </div>
+                <p className="text-xl text-gray-600 leading-relaxed max-w-4xl">
+                  ImmunoSentry reduces trial risk by identifying toxic phenotypes at the randomization stage. Our platform enables Pharma R&D teams to optimize clinical protocols, personalize intervention timing, and maximize the therapeutic window—transforming high-attrition trials into precision medicine success stories.
+                </p>
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <div className="px-4 py-2 bg-indigo-50 rounded-full text-xs font-bold text-indigo-600 uppercase tracking-wider border border-indigo-100">
+                    Randomization Optimization
+                  </div>
+                  <div className="px-4 py-2 bg-emerald-50 rounded-full text-xs font-bold text-emerald-600 uppercase tracking-wider border border-emerald-100">
+                    Attrition Mitigation
+                  </div>
+                  <div className="px-4 py-2 bg-amber-50 rounded-full text-xs font-bold text-amber-600 uppercase tracking-wider border border-amber-100">
+                    Protocol Personalization
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Momentum & Traction Section */}
+        <section className="mb-32">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center gap-2 font-display">
+                <BarChart className="w-4 h-4" /> Traction & Velocity
+              </h2>
+              <h3 className="text-3xl font-bold text-gray-900 font-display">Building <span className="text-indigo-600">Momentum</span>.</h3>
+            </div>
+            <div className="flex items-center gap-3 px-4 py-2 bg-indigo-50 rounded-xl border border-indigo-100">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+              <span className="text-xs font-bold text-indigo-600 uppercase">Pre-Seed / Seed Round Active</span>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-8 bg-white rounded-3xl border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8 group hover:border-indigo-200 transition-all">
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 group-hover:text-indigo-600 transition-colors">
+                  <Layout className="w-8 h-8" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-gray-900 mb-1">GeRI Consortium Evaluation</h4>
+                  <p className="text-sm text-gray-500">Ongoing technical audit for early-cessation prediction using the GeRI prospective cohort (n=1,302).</p>
+                </div>
+              </div>
+              <div className="px-4 py-2 bg-indigo-50 text-indigo-600 rounded-full text-[10px] font-bold uppercase tracking-widest">Under Evaluation</div>
+            </div>
+            <div className="p-8 bg-white rounded-3xl border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8 group hover:border-indigo-200 transition-all">
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 group-hover:text-indigo-600 transition-colors">
+                  <Users className="w-8 h-8" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-gray-900 mb-1">Pharma R&D Pipeline</h4>
+                  <p className="text-sm text-gray-500">Actively onboarding 2 Tier-1 French pharmaceutical R&D leads for retrospective audit pilots.</p>
+                </div>
+              </div>
+              <div className="px-4 py-2 bg-emerald-50 text-emerald-600 rounded-full text-[10px] font-bold uppercase tracking-widest">Pilot Phase</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Leadership Section */}
+        <section className="mb-32">
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 flex items-center justify-center gap-2 font-display">
+              <Users className="w-4 h-4" /> Leadership & Scientific Advisory
+            </h2>
+            <h3 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl font-display">
+              The Minds Behind <span className="text-indigo-600">ImmunoSentry</span>.
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {[
+              {
+                name: "Harika Yadav",
+                role: "Chief Scientific Officer",
+                desc: "Specialist in clinical pharmacology and immuno-oncology research. Harvard HMX Immuno-oncology certified. Leading the mechanistic biological modeling and clinical research alignment frameworks.",
+                icon: <Microscope className="w-6 h-6" />
+              },
+              {
+                name: "Krrishi Yadav",
+                role: "Chief AI Officer",
+                desc: "Architect of the ImmunoSentry Federated Learning engine. Specializing in explainable AI (XAI) and high-fidelity clinical simulation.",
+                icon: <Cpu className="w-6 h-6" />
+              }
+            ].map((member, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group"
+              >
+                <div className="p-10 bg-white rounded-[3rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all relative overflow-hidden text-center">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full -mr-16 -mt-16 blur-2xl opacity-50 group-hover:scale-150 transition-transform duration-700" />
+                  
+                  <div className="w-20 h-20 bg-indigo-600 rounded-3xl flex items-center justify-center text-white mx-auto mb-8 shadow-lg shadow-indigo-100 group-hover:rotate-6 transition-transform">
+                    {member.icon}
+                  </div>
+                  
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 font-display">{member.name}</h4>
+                  <div className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-6">{member.role}</div>
+                  
+                  <p className="text-gray-500 leading-relaxed mb-8 text-sm">
+                    {member.desc}
+                  </p>
+                  
+                  <div className="flex justify-center gap-4">
+                    <a 
+                      href={member.name === "Harika Yadav" ? "https://www.linkedin.com/in/harika-yadav-27914724a" : "#"} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="p-3 bg-gray-50 rounded-xl text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all underline text-xs font-bold uppercase tracking-widest"
+                    >
+                      Connect on LinkedIn
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="p-8 bg-indigo-50 rounded-[2.5rem] border border-indigo-100 border-dashed text-center">
+              <h4 className="text-indigo-600 font-bold uppercase tracking-widest text-xs mb-6">Scientific Advisory Council</h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
+                <div className="space-y-2">
+                  <div className="font-bold text-gray-900 text-sm">In Appointment</div>
+                  <div className="text-[10px] text-gray-500 font-bold uppercase">Oncology Advisor (MSK)</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="font-bold text-gray-900 text-sm">In Appointment</div>
+                  <div className="text-[10px] text-gray-500 font-bold uppercase">Biostatistics Lead</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="font-bold text-gray-900 text-sm">In Appointment</div>
+                  <div className="text-[10px] text-gray-500 font-bold uppercase">Genomics Authority</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="font-bold text-gray-900 text-sm">In Appointment</div>
+                  <div className="text-[10px] text-gray-500 font-bold uppercase">Pharma Compliance</div>
+                </div>
+              </div>
+              <p className="mt-8 text-xs text-indigo-400 font-medium italic">
+                *We are currently finalizing appointments for our 2026 Clinical Advisory Council.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Strategic Moats */}
+        <section className="mb-32">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 flex items-center gap-3 font-display">
+            <Lock className="w-8 h-8 text-indigo-600" /> Proprietary Defensibility Moats
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-8 bg-gray-50 rounded-[2.5rem] border border-gray-100"
+            >
+              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                <Cpu className="w-6 h-6 text-indigo-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Federated Learning Architecture</h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Pharma companies are protective of their data. Our "Privacy-First" Federated Learning allows us to train models on private clinical trial data without the data ever leaving their servers.
+              </p>
+              <div className="flex items-center gap-2 text-indigo-600 font-bold text-sm">
+                <Zap className="w-4 h-4" /> Removes 90% of Legal/Compliance Friction
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-8 bg-indigo-900 rounded-[2.5rem] text-white"
+            >
+              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+                <Database className="w-6 h-6 text-indigo-300" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">The "Data Flywheel"</h3>
+              <p className="text-indigo-200 leading-relaxed mb-6">
+                As we partner with diagnostic labs (CDx model), we aggregate anonymized real-world data (RWD) that pharma companies lack. This creates a self-reinforcing loop: more data → better models → more partners.
+              </p>
+              <div className="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+                <ShieldCheck className="w-4 h-4" /> Unattainable by "Tech-Only" Competitors
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Pilot Framework */}
+        <section className="mb-32">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-wider mb-6">
+              <Zap className="w-3 h-3" /> Active Pilot Framework
+            </div>
+            <p className="text-lg text-gray-600 leading-relaxed font-medium">
+              Our structured 12-week Pilot Framework enables rapid R&D integration via secure API ingestion and local Federated Learning nodes, allowing teams to validate mechanistic simulations on proprietary cohorts with zero data exfiltration. 
+              This model ensures absolute data sovereignty while accelerating the path to prospective trial stratification.
+            </p>
+          </motion.div>
+        </section>
+
+        {/* Regulatory Roadmap */}
+        <section className="mb-32">
+          <div className="bg-white p-12 rounded-[3rem] border border-gray-100 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full -mr-32 -mt-32 blur-3xl opacity-50" />
+            <div className="relative z-10">
+              <h2 className="text-3xl font-bold text-gray-900 mb-12 flex items-center gap-3 font-display">
+                <Scale className="w-8 h-8 text-indigo-600" /> Regulatory & Clinical Roadmap
+              </h2>
+              <div className="space-y-12">
+                {[
+                  {
+                    phase: "Phase 1: R&D Intelligence (Current)",
+                    title: "Pharma Pipeline De-risking",
+                    desc: "Deploying as a 'Decision Support Tool' for R&D teams. Low regulatory hurdle, immediate revenue through consulting and licensing.",
+                    status: "Active"
+                  },
+                  {
+                    phase: "Phase 2: Clinical Trial Companion",
+                    title: "Prospective Trial Stratification",
+                    desc: "Integrating into Phase II/III protocols as a secondary endpoint. Benchmarking the 'Steroid Timing Simulation' engine in real-time.",
+                    status: "Q4 2026"
+                  },
+                  {
+                    phase: "Phase 3: SaMD Certification",
+                    title: "Class II Medical Device (FDA/EMA)",
+                    desc: "Full certification as 'Software as a Medical Device' (SaMD). Transitioning from 'Support' to 'Diagnostic support status'.",
+                    status: "2027-2028"
+                  }
+                ].map((step, i) => (
+                  <div key={i} className="flex gap-8">
+                    <div className="flex-shrink-0 w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center font-black text-indigo-600 text-xl">
+                      0{i + 1}
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-xs font-bold text-indigo-600 uppercase tracking-widest">{step.phase}</span>
+                        <span className="px-2 py-0.5 bg-gray-100 text-gray-500 text-[10px] font-bold rounded uppercase">{step.status}</span>
+                      </div>
+                      <h4 className="text-2xl font-bold text-gray-900 mb-3 font-display">{step.title}</h4>
+                      <p className="text-gray-500 max-w-2xl leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Competitive Landscape */}
+        <section className="mb-32">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 flex items-center gap-3 font-display">
+            <Target className="w-8 h-8 text-indigo-600" /> Competitive Landscape
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Standard CROs",
+                weakness: "Manual, slow, and lack mechanistic biological modeling.",
+                edge: "ImmunoSentry is 100x faster and deterministic."
+              },
+              {
+                name: "Generic AI Startups",
+                weakness: "Black-box models that clinicians don't trust.",
+                edge: "Our 'Explainable Evidence Trace' provides regulatory-grade audit trails."
+              },
+              {
+                name: "Internal Pharma Teams",
+                weakness: "Siloed data and high overhead costs.",
+                edge: "We act as a cross-pharma intelligence layer, learning from the entire ecosystem."
+              }
+            ].map((comp, i) => (
+              <div key={i} className="p-8 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+                <h4 className="text-xl font-bold text-gray-900 mb-4 font-display">{comp.name}</h4>
+                <div className="space-y-4">
+                  <div>
+                    <div className="text-[10px] font-bold text-red-400 uppercase mb-1">Structural Weakness</div>
+                    <p className="text-sm text-gray-500">{comp.weakness}</p>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold text-emerald-500 uppercase mb-1">Our Advantage</div>
+                    <p className="text-sm text-gray-900 font-medium">{comp.edge}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="text-center py-24 bg-indigo-600 rounded-[3rem] text-white relative overflow-hidden group mb-12">
+          <div className="absolute inset-0 bg-grid opacity-10" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl group-hover:scale-110 transition-transform duration-700" />
+          
+          <div className="relative z-10 max-w-4xl mx-auto px-4">
+            <h2 className="text-4xl font-black mb-8 tracking-tight">Investment & Growth.</h2>
+            <p className="text-xl text-indigo-100 mb-12 leading-relaxed">
+              ImmunoSentry is scaling its clinical intelligence engine. We are looking for mission-aligned investors and visionary accelerators to join our pre-seed consortium.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <a 
+                href="mailto:harikayadavlakshmi@gmail.com?subject=Investor Relations: ImmunoSentry Pitch Deck Request"
+                className="px-10 py-5 bg-white text-indigo-600 rounded-2xl font-bold hover:bg-indigo-50 transition-all flex items-center gap-3 shadow-2xl shadow-indigo-900/20 text-lg"
+              >
+                Request Investor Deck <ArrowRight className="w-6 h-6" />
+              </a>
+              <Link 
+                to="/" 
+                className="px-10 py-5 bg-indigo-500 text-white rounded-2xl font-bold hover:bg-indigo-400 transition-all flex items-center gap-3 border border-indigo-400 text-lg"
+              >
+                Back to Platform <Zap className="w-6 h-6" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="text-center mb-24">
+          <div className="inline-flex items-center gap-12 text-sm font-bold text-gray-400 uppercase tracking-[0.2em] opacity-50">
+            <span>Built in Paris</span>
+            <span>•</span>
+            <span>Global Vision</span>
+            <span>•</span>
+            <span>Unfair Moat</span>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-gray-50 border-t border-gray-200 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex flex-col items-center justify-center gap-6 mb-8">
+            <div className="flex items-center gap-3 opacity-50 mb-4">
+              <img src="/logo.svg" alt="ImmunoSentry Logo" className="h-8 w-auto grayscale" referrerPolicy="no-referrer" />
+            </div>
+            <div className="flex items-center gap-6">
+              <Link to="/legal" className="text-xs font-bold text-gray-500 hover:text-indigo-600 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/legal" className="text-xs font-bold text-gray-500 hover:text-indigo-600 transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
+            <div className="flex items-center gap-4">
+              <a href="https://www.linkedin.com/company/immunosentry" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors">
+                <Github className="w-5 h-5" />
+              </a>
+              <a href="https://instagram.com/immunosentry" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+          <p className="text-xs text-gray-400 uppercase font-bold tracking-widest mb-4">Confidential Strategic Document</p>
+          <div className="flex justify-center gap-4 text-[10px] font-bold text-gray-300 uppercase tracking-widest mb-6">
+            <span>GDPR Principles Applied</span>
+            <span>•</span>
+            <span>HIPAA-Aware Architecture</span>
+          </div>
+          <p className="text-[10px] text-gray-400 max-w-md mx-auto">
+            This document contains proprietary strategic information for ImmunoSentry SAS.
+          </p>
+          <p className="text-[10px] text-gray-400 mt-4">
+            © 2026 ImmunoSentry SAS · <Link to="/legal" className="hover:underline">Legal</Link>
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
