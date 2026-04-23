@@ -113,7 +113,7 @@ export function Home() {
         <InterventionEngine />
 
         {/* Economic Impact / Mission Critical Section */}
-        <section className="py-24 bg-white">
+        <section id="business" className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mt-32 mb-20">
               <div className="text-center mb-16">
