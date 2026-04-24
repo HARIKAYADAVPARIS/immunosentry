@@ -1,8 +1,8 @@
 <svg viewBox="0 0 1100 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="shieldGrad" x1="120" y1="80" x2="120" y2="320" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1E40AF" />
-      <stop offset="100%" stop-color="#0D9488" />
+      <stop offset="0%" stop-color="#0D9488" />
+      <stop offset="100%" stop-color="#1E40AF" />
     </linearGradient>
   </defs>
   
@@ -16,17 +16,17 @@
     <path d="M100 120L80 90M200 120L220 90" stroke="white" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
     
     <!-- Molecules -->
-    <circle cx="280" cy="80" r="12" fill="#2DD4BF" />
-    <circle cx="320" cy="110" r="16" fill="#1E40AF" />
-    <circle cx="340" cy="60" r="8" fill="#2DD4BF" />
-    <line x1="280" y1="80" x2="320" y2="110" stroke="#2DD4BF" stroke-width="4" />
-    <line x1="320" y1="110" x2="340" y2="60" stroke="#2DD4BF" stroke-width="4" />
-    <circle cx="240" cy="40" r="5" fill="#2DD4BF" />
-    <path d="M50 300L60 300M55 295L55 305" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" />
-    <path d="M260 220L270 220M265 215L265 225" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" />
-    <circle cx="40" cy="120" r="4" fill="#2DD4BF" />
+    <circle cx="280" cy="80" r="12" fill="#1E40AF" />
+    <circle cx="320" cy="110" r="16" fill="#0D9488" />
+    <circle cx="340" cy="60" r="8" fill="#1E40AF" />
+    <line x1="280" y1="80" x2="320" y2="110" stroke="#0D9488" stroke-width="4" />
+    <line x1="320" y1="110" x2="340" y2="60" stroke="#0D9488" stroke-width="4" />
+    <circle cx="240" cy="40" r="5" fill="#1E40AF" />
+    <path d="M50 300L60 300M55 295L55 305" stroke="#0D9488" stroke-width="3" stroke-linecap="round" />
+    <path d="M260 220L270 220M265 215L265 225" stroke="#0D9488" stroke-width="3" stroke-linecap="round" />
+    <circle cx="40" cy="120" r="4" fill="#1E40AF" />
   </g>
   
   <!-- Branded Text -->
-  <text x="400" y="225" fill="#111827" style="font: bold 72px Inter, sans-serif; letter-spacing: -2px;">Immuno<tspan fill="#4F46E5">Sentry</tspan></text>
+  <text x="400" y="225" fill="#4F46E5" style="font: bold 72px Inter, sans-serif; letter-spacing: -2px;">Immuno<tspan fill="#111827">Sentry</tspan></text>
 </svg>

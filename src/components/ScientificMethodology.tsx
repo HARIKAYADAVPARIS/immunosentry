@@ -150,6 +150,47 @@ export function ScientificMethodology() {
                 </div>
               </div>
 
+              {/* Data Fidelity & Sensitivity Section */}
+              <div className="mb-32">
+                <h2 className="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-6">
+                  Model Fidelity & Data Sensitivity
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed mb-10">
+                  To maintain scientific integrity, we declare the relationship between "Data Density" and "Predictive Confidence." Our benchmarked AUC is not a single static number but a variable dependent on input fidelity.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {[
+                    { tier: "Clinical Only", auc: "0.68", markers: "Age, Sex, Grade, BMI", desc: "Baseline epidemiological risk without mechanistic insight.", color: "text-gray-400" },
+                    { tier: "Clinical + Germline", auc: "0.76", markers: "HLA-B*27, DRB1*11:01", desc: "Addition of genetic susceptibility mapping.", color: "text-indigo-400" },
+                    { tier: "Full Multi-Omic", auc: "0.84", markers: "Genetics + Microbiome + Lab", desc: "The 'Gold Standard' for trial rescue and protocol optimization.", color: "text-indigo-600 font-bold" }
+                  ].map((tier, i) => (
+                    <div key={i} className="p-6 bg-white border border-gray-100 rounded-3xl shadow-sm">
+                      <div className="text-[10px] font-bold text-gray-400 uppercase mb-3 tracking-widest">{tier.tier}</div>
+                      <div className={cn("text-4xl font-black mb-2", tier.color)}>AUC {tier.auc}</div>
+                      <div className="text-[10px] font-mono text-indigo-500 mb-4">{tier.markers}</div>
+                      <p className="text-xs text-gray-500 leading-relaxed">{tier.desc}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-12 p-8 bg-amber-50 rounded-3xl border border-amber-100">
+                  <h4 className="text-sm font-bold text-amber-900 mb-4 flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4" /> Reliability & Bias Disclosure (Anti-Overclaim Policy)
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs text-amber-800 leading-relaxed">
+                    <div className="space-y-3">
+                      <p>• <span className="font-bold">Cohort Bias:</span> Primary benchmarking performed on Caucasian-skewed datasets (TCGA/MSK). Predictive accuracy for diverse racial/ethnic genotypes (e.g., East Asian-specific HLA-A*24:02) is currently under active research.</p>
+                      <p>• <span className="font-bold">Indication Specificity:</span> High fidelity in NSCLC and Melanoma. Lower confidence in Colorectal and GI cancers where local gut inflammation may confound systemic markers.</p>
+                    </div>
+                    <div className="space-y-3">
+                      <p>• <span className="font-bold">Temporal Lag:</span> Stochastic biological variance (e.g., a sudden diet change or viral infection) can deviate a patient from the deterministic simulator trend.</p>
+                      <p>• <span className="font-bold">Iatrogenic Range:</span> Our methodology does not account for secondary medications (NSAIDs, antibiotics) which are known confounders of microbiome-driven ICI response.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* The Three Pillars */}
               <div className="space-y-32">
                 
